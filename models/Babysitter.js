@@ -20,10 +20,11 @@ var BabysitterSchema = new Schema({
     unique: false,
     required: true 
   },
-  isMale: {
-    type: Boolean,
+  //Gender is a categorized variable with numerical data
+  gender: {
+    type: Number,
     required: true 
-  }
+  },
   email: {
     type: String,
     trim: true,

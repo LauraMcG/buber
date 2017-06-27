@@ -24,7 +24,7 @@ var AppointmentSchema = new Schema ({
 		type: Number,
 		required: true
 	},
-	isAccepted: {
+	sitterAccepted: {
 		type: Boolean,
 		required: true
 	}
