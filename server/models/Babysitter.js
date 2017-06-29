@@ -15,7 +15,17 @@ var BabysitterSchema = new Schema({
     unique: false,
     required: true 
   }, 
-  birthday: { 
+  birthdayMonth: { 
+    type: Date, 
+    unique: false,
+    required: true 
+  },
+  birthdayDay: { 
+    type: Date, 
+    unique: false,
+    required: true 
+  },
+  birthdayYear: { 
     type: Date, 
     unique: false,
     required: true 
