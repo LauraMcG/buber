@@ -27,7 +27,7 @@ router.post("/", function(req, res) {
 // Route to get new parent profile page
 router.get("/:id", function(req, res) {
 
-  Parent.find({})
+  Parent.findOne({})
     .exec(function(err, doc) {
 
       if (err) {

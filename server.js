@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var Parent = require("./server/models/Parent");
 var Babysitter = require("./server/models/Babysitter");
+var Appointment = require("./server/models/Appointment");
 
 //Express and port set-up
 var app = express();
@@ -28,6 +29,10 @@ app.use("/parent", parentRoutes);
 // adding sitterRoute
 const babysitterRoutes = require("./server/routes/babysitterRoutes");
 app.use("/babysitter", babysitterRoutes);
+
+// adding sitterRoute
+const appointmentRoutes = require("./server/routes/appointmentRoutes");
+app.use("/appointment", appointmentRoutes);
 
 // Mongoose Setup
 mongoose.connect('mongodb://localhost/buber');
