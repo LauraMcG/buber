@@ -4,10 +4,8 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 
-//Importing Parent, Babsitter, and Appointment Schema modules
-var Parent = require('./models/Parent.js');
-var Babysitter = require('./models/Babysitter.js');
-var Appointment = require('./models/Appointment.js');
+var Parent = require("./server/models/Parent");
+var Babysitter = require("./server/models/Babysitter");
 
 //Express and port set-up
 var app = express();
@@ -22,6 +20,14 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 
 // serve static files from public directory
 app.use(express.static('./public'));
+
+// adding parentRoute
+const parentRoutes = require("./server/routes/parentRoutes");
+app.use("/parent", parentRoutes);
+
+// adding sitterRoute
+const babysitterRoutes = require("./server/routes/babysitterRoutes");
+app.use("/babysitter", babysitterRoutes);
 
 // Mongoose Setup
 mongoose.connect('mongodb://localhost/buber');
