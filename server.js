@@ -7,9 +7,16 @@ var logger = require('morgan');
 var Parent = require("./server/models/Parent");
 var Babysitter = require("./server/models/Babysitter");
 
+var passport = require('./app/config/passport.js');
+
 //Express and port set-up
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+// set up express to use passport
+// app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true}));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Body Parser and Logger Config
 app.use(logger('dev'));

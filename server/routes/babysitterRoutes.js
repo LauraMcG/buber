@@ -2,7 +2,7 @@ var passport = require("passport");
 var express = require("express");
 var router = express.Router()
 
-// Route to get all babysitters
+// Route to get all babysitterscd
 router.get("/", function(req, res) {
   Babysitter.find({})
     .exec(function(err, doc) {
