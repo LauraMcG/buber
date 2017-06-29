@@ -1,0 +1,17 @@
+{
+	"firstName": "Tara",
+	"lastName": "Hensle", 
+	"birthdayMonth": 10,
+	"birthdayDay": 28,
+	"birthdayYear": 1987,
+	"gender": 1,
+	"email": "tara@email.com", 
+	"password": "something",
+	"isAvailable": true,
+	"phoneNumber": "8122292590",
+	"bio": "Savvy babysitter biography",
+	"certifications": "First Aid",
+	"ratePerHour": 20.50,
+	"numFavs": 6
+} 
+
