@@ -24,15 +24,15 @@ app.use(express.static('./public'));
 
 // adding parentRoute
 const parentRoutes = require("./server/routes/parentRoutes");
-app.use("/parent", parentRoutes);
+app.use("/", parentRoutes);
 
 // adding sitterRoute
 const babysitterRoutes = require("./server/routes/babysitterRoutes");
-app.use("/babysitter", babysitterRoutes);
+app.use("/", babysitterRoutes);
 
 // adding sitterRoute
 const appointmentRoutes = require("./server/routes/appointmentRoutes");
-app.use("/appointment", appointmentRoutes);
+app.use("/", appointmentRoutes);
 
 // Mongoose Setup
 mongoose.connect('mongodb://localhost/buber');
