@@ -3,18 +3,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var BabysitterSchema = new Schema({
-  firstName: {
-    type: String,
-    trim: true,
-    unique: false,
-    required: true 
+  _babysitterID: {
+    type: Schema.Types.ObjectId,
+    required: true, 
+    ref: 'User'
   },
-  lastName: {
-    type: String,
-    trim: true,
-    unique: false,
-    required: true 
-  }, 
   birthdayMonth: { 
     type: Date, 
     unique: false,
@@ -33,18 +26,6 @@ var BabysitterSchema = new Schema({
   //Gender is a categorized variable with numerical data
   gender: {
     type: Number,
-    required: true 
-  },
-  email: {
-    type: String,
-    trim: true,
-    unique: true,
-    required: true 
-  }, 
-  password: {
-    type: String,
-    trim: true,
-    unique: false,
     required: true 
   },
   isAvailable: {
