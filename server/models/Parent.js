@@ -61,7 +61,7 @@ var ParentSchema = new Schema({
     type: Number,
     required: true,
     default: 0
-  }
+  },
 });
 
 var Parent = mongoose.model('Parent', ParentSchema);
