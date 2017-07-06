@@ -28,6 +28,10 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 // serve static files from public directory
 app.use(express.static('./public'));
 
+//Passport middleware
+var authCheckMiddleware = require('./server/passport/auth-passport.js');
+app.use('/api', authCheckMiddleware);
+
 // adding parentRoute
 const parentRoutes = require("./server/routes/parentRoutes");
 app.use("/parent", parentRoutes);
@@ -45,7 +49,7 @@ var db = mongoose.connection;
     console.log('mongoose error: ', err);
   });
 
-  db.once('open', function() {
+  db.once('openUri', function() {
     console.log('mongoose connection successful');
   });
 

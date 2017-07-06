@@ -1,0 +1,4 @@
+{
+  "dbUri": "mongodb://localhost/buber",
+  "jwtSecret": "al17aswitews?idk"
+}
