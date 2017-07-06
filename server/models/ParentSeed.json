@@ -1,0 +1,17 @@
+{
+	"firstName": "Honey",
+	"lastName": "Boo Boo", 
+	"email": "yaaass@email.com", 
+	"password": "yasas",
+	"address": "10 Shadow Creek Chicago IL 60640",
+	"phoneNumber": "1824619445",
+	"numChildren": 4,
+	"emergencyFirstName": "Joyce",
+	"emergencyLastName": "Levitt", 
+	"emergencyPhoneNumber": "1824651795",
+	"doctorLastName": "Boring",
+	"doctorPhoneNumber": "5552125875",
+	"wifiDomain": "honeyboobooChild",
+	"wifiPassword": "yaaaaaassssss",
+	"favSitters": 3
+}

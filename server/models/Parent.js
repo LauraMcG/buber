@@ -3,29 +3,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ParentSchema = new Schema({
-  firstName: {
-    type: String,
-    trim: true,
-    unique: false,
+  _parentID: {
+    type: Schema.Types.ObjectId,
     required: true, 
-  },
-  lastName: {
-    type: String,
-    trim: true,
-    unique: false,
-    required: true, 
-  }, 
-  email: {
-    type: String,
-    trim: true,
-    unique: true,
-    required: true, 
-  }, 
-  password: {
-    type: String,
-    trim: true,
-    unique: false,
-    required: true, 
+    ref: 'User'
   },
   address: {
     type: String,
