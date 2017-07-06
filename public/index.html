@@ -1,7 +1,151 @@
 <head>
-	
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- favicon -->
+  <!--   <link rel="icon" href="assets/images/favicon.ico" /> -->
+
+<!-- Title -->
+    <title>Babysitting Club</title>
+   
+<!-- Bootstrap Stylesheet-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral" rel="stylesheet">
+
+<!--   Main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+
+
+<!-- NAVIGATION -->
+    <nav class="navbar navbar-default scallop">
+        <div class="container-fluid">
+
+            <div class="row navbar-header">
+
+              <!-- LOGO -->
+                  <a class="navbar-brand" href="index.html">
+                    Babysitters Club
+                  </a>
+                 <!--  <h3 class="brandTitle">Concession Butler</h3> -->
+
+              <!-- HAMBURGER -->
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cb-navbar-collapse-1" aria-expanded="false">
+                      <!-- <span class="sr-only">Toggle navigation</span> -->
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+            
+            </div> <!-- end .row .navbar-header-->
+
+            <!-- NAV LINKS -->
+          <div class="row ">
+            <div class="navLinkWrapper">
+                <div class="collapse navbar-collapse" id="cb-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li><a class="navLinks" href="order-create.html">Babysitters</a></li>
+                      <li><a class="navLinks" href="order-display.html">Parents</a></li>
+                    </ul>
+                </div><!-- /end .navbar-collapse --> 
+            </div> <!-- end navLinkWrapper -->
+          </div> <!-- end row -->
+              
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+<!-- MAINCONTENT -->
+<div class="container-fluid">    
+  <div class="row mainRow seafoam">
+    <div class="col-md-12 heroContent">
+      <h1>In one click, reach all the babysitters in your neighborhood.</h1>
+      <h1><span class="underlineSpan">35</span> babysitters are available at this very moment.</h1>
+      <h1>What are you waiting for?</h1>
+    </div>
+  </div> <!-- end mainRow -->
+
+  <div class="row sitterRow">
+    <div class="col-md-12">
+      <h2>Favorite Sitters</h2>
+
+      <div class="col-md-2 box text-center favSitter">
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 1</p>  
+        
+        <button type="button" class="btn btn-default"> Book Sitter
+        </button>
+      </div>
+
+      <div class="col-md-2 box text-center favSitter">
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 2</p>  
+        
+        <button type="button" class="btn btn-default"> Book Sitter
+        </button>
+      </div>
+
+      <div class="col-md-2 box text-center favSitter">
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 3</p>  
+        
+        <button type="button" class="btn btn-default"> Book Sitter
+        </button>
+      </div>
+
+      <div class="col-md-2 box text-center favSitter">
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 4</p>  
+        
+        <button type="button" class="btn btn-default"> Book Sitter
+        </button>
+      </div>
+
+      <div class="col-md-2 box text-center favSitter">
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 5</p>  
+        
+        <button type="button" class="btn btn-default"> Book Sitter
+        </button>
+      </div>
+
+      <div class="col-md-2 box text-center favSitter">
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 6</p>  
+        
+        <button type="button" class="btn btn-default"> Book Sitter
+        </button>
+      </div>
+
+
+
+    </div> <!-- end container of all fav sitters -->
+  </div> <!-- end favSitterRow -->
+
+  <div class="row allSitters">
+    <div class="col-md-12">
+      <h2>All Sitters</h2>
+    </div>
+  </div>
+
+</div>
+  <!-- Scripts: jQuery, Tether, Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+<!-- Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
 	<script type="text/javascript">
 		var user = JSON.parse({% userContext %})
 	</script>

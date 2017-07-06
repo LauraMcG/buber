@@ -1,0 +1,78 @@
+/*FONTS*/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #414b56;
+}
+
+nav a, .favSitter, h2{
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 2.5px;
+}
+
+h2 {
+	font-size: 20px;
+}
+.navbar-default .navbar-brand, h2 {
+	letter-spacing: 4px;
+	font-weight:600;
+	color: darkslategrey;
+	/*font-family: 'Spectral', serif;
+	font-size: 30px;
+	text-transform:none;*/
+}
+
+.navbar {
+	padding: 10px 0px 10px 0px; 
+	margin-bottom: 0px;
+}
+/*COLORS*/
+
+.blue {
+	background-color: #4694b9;
+}
+
+.seafoam {
+	background-color: #badbcb;
+}
+
+.pink {
+	background-color: #e8bfcd;
+}
+
+.darkgrey {
+	color: #414b56;
+}
+
+.mainRow {
+	height:400px;
+
+}
+
+.heroContent {
+	padding-top: 90px;
+}
+h1, h3 {
+	font-family: 'Spectral', serif;
+}
+
+.underlineSpan {
+	text-decoration: underline;
+}
+
+.box {
+	height: 100px;
+	background-color: #e8bfcd;
+	border: 1px solid darkgrey;
+}
+
+.favSitter {
+	padding-top:16px;
+
+}
+
+.sitterRow, .allSitters {
+	height: 200px;
+}
