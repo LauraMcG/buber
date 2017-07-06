@@ -76,4 +76,21 @@ router.delete("/appointments/:id", function(req, res) {
   });
 });
 
+// Route to get all Appointments by _parentID
+
+router.get("/appointments/populate", function(req, res) {
+  //query to find all appointments
+  Appointment.find({})
+    //populate the parents
+  .populate("_parentID")
+  .exec(function(error, doc){
+    if (error){
+      res.send(error);
+    }
+    else {
+      res.json(doc);
+    }
+  });
+});
+
 module.exports = router;
