@@ -1,9 +1,13 @@
 var passport = require("passport");
 var express = require("express");
-var router = express.Router()
+var router = express.Router();
 
-// Route to get all babysitterscd
-router.get("/", function(req, res) {
+var Babysitter = require("../models/Babysitter");
+
+
+// Route to get all babysitters
+router.get("/babysitters", function(req, res) {
+
   Babysitter.find({})
     .exec(function(err, doc) {
 
@@ -11,30 +15,14 @@ router.get("/", function(req, res) {
         console.log(err);
       }
       else {
-        res.send(doc);
+        res.json(doc);
       }
-    });
-
-});
-
-// Route to add new babysitter to database
-router.post("/", function(req, res) {
-  var newBabysitter = new Babysitter(req.body);
-
-  console.log(req.body);
-
-  newBabysitter.save(function(err, doc) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.send(doc);
-    }
   });
+
 });
 
-// Route to get all saved babysitters
-router.get("/:id", function(req, res) {
+// Route to get one babysitter
+router.get("/babysitters/:id", function(req, res) {
   var id = req.params.id;
 
   Babysitter.findOne({'_id': id})
@@ -44,26 +32,56 @@ router.get("/:id", function(req, res) {
         console.log(err);
       }
       else {
-        res.send(doc);
+        res.json(doc);
       }
     });
 });
 
-// router.put("/:id", function(req, res) {
-//   var id = req.params.id;
+// Route to add new babysitter to database
+router.post("/babysitters", function(req, res) {
+  var newBabysitter = new Babysitter(req.body);
 
-//   Babysitter.findOneAndUpdate({'_id': id}, req.body)
-//     .exec(function(err, doc) {
+  newBabysitter.save(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.json(doc);
+    }
+  });
+});
 
-//       if (err) {
-//         console.log(err);
-//       }
-//       else {
-//         res.send(doc);
-//       }
-//     });
-// });
+// Update Babysitter in database
 
+router.put("/babysitters/:id", function(req, res) {
+  
+      var id = req.params.id;
+
+      Babysitter.findOneAndUpdate({"_id": id }, {"$set":req.body})
+      .exec(function(err, doc){
+        if (err) {
+          console.log(err)
+        }
+        else {
+          res.json(doc);
+        }
+      })
+  })
+
+// Babysitter Delete Route
+router.delete("/babysitters/:id", function(req, res) {
+  var id = req.params.id;
+
+  Babysitter.find({'_id': id}).remove().exec( 
+  function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      res.send("Deleted");
+    }
+  });
+});
 
 
 module.exports = router;

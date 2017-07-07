@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var Parent = require("./server/models/Parent");
 var Babysitter = require("./server/models/Babysitter");
+var Appointment = require("./server/models/Appointment");
 
 var passport = require('./app/config/passport.js');
 
@@ -34,11 +35,15 @@ app.use('/api', authCheckMiddleware);
 
 // adding parentRoute
 const parentRoutes = require("./server/routes/parentRoutes");
-app.use("/parent", parentRoutes);
+app.use("/", parentRoutes);
 
 // adding sitterRoute
 const babysitterRoutes = require("./server/routes/babysitterRoutes");
-app.use("/babysitter", babysitterRoutes);
+app.use("/", babysitterRoutes);
+
+// adding sitterRoute
+const appointmentRoutes = require("./server/routes/appointmentRoutes");
+app.use("/", appointmentRoutes);
 
 // Mongoose Setup
 mongoose.connect('mongodb://localhost/buber');
