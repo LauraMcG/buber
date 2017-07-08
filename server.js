@@ -33,16 +33,20 @@ app.use(express.static('./public'));
 var authCheckMiddleware = require('./server/passport/auth-passport.js');
 app.use('/api', authCheckMiddleware);
 
+// adding userRoute
+var userRoutes = require("./server/routes/userRoutes");
+app.use("/", userRoutes);
+
 // adding parentRoute
-const parentRoutes = require("./server/routes/parentRoutes");
+var parentRoutes = require("./server/routes/parentRoutes");
 app.use("/", parentRoutes);
 
 // adding sitterRoute
-const babysitterRoutes = require("./server/routes/babysitterRoutes");
+var babysitterRoutes = require("./server/routes/babysitterRoutes");
 app.use("/", babysitterRoutes);
 
 // adding sitterRoute
-const appointmentRoutes = require("./server/routes/appointmentRoutes");
+var appointmentRoutes = require("./server/routes/appointmentRoutes");
 app.use("/", appointmentRoutes);
 
 // Mongoose Setup
