@@ -25,12 +25,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type: "application/vnd.api+json"}));
+
 // serve static files from public directory
 app.use(express.static('./public'));
 
 //Passport middleware
-var authCheckMiddleware = require('./server/passport/auth-passport.js');
-app.use('/api', authCheckMiddleware);
+// var authCheckMiddleware = require('./server/passport/auth-passport.js');
+// app.use('/api', authCheckMiddleware);
 
 // adding userRoute
 var userRoutes = require("./server/routes/userRoutes");
@@ -38,15 +39,21 @@ app.use("/", userRoutes);
 
 // adding parentRoute
 var parentRoutes = require("./server/routes/parentRoutes");
-app.use("/", parentRoutes);
+app.use("/api", parentRoutes);
 
 // adding sitterRoute
 var babysitterRoutes = require("./server/routes/babysitterRoutes");
-app.use("/", babysitterRoutes);
+app.use("/api", babysitterRoutes);
 
 // adding sitterRoute
 var appointmentRoutes = require("./server/routes/appointmentRoutes");
-app.use("/", appointmentRoutes);
+app.use("/api", appointmentRoutes);
+
+
+//fallback route
+app.get('*', function(req,res){
+	res.sendFile(__dirname + '/public/index.html');
+});
 
 // Mongoose Setup
 mongoose.connect('mongodb://localhost/buber');
@@ -60,6 +67,7 @@ var db = mongoose.connection;
   db.once('openUri', function() {
     console.log('mongoose connection successful');
   });
+
 
 //Server Listener
 app.listen(PORT, function() {
