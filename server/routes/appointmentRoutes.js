@@ -5,6 +5,7 @@ var Appointment = require("../models/Appointment")
 
 // Route to get all Appointments
 router.get("/appointments", function(req, res) {
+
   Appointment.find({})
     .exec(function(err, doc) {
 
@@ -39,8 +40,8 @@ router.get("/appointments/parents/:id", function(req, res) {
   //query to find all appointments
 
   Appointment.find({"_parentID" : req.params.id})
+    .populate("_babysitterID")
     .exec(function(err, doc) {
-      .populate("_babysitterID")
       if (err) {
         console.log(err);
       }
