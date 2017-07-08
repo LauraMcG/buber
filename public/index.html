@@ -60,71 +60,9 @@
 
 
 <!-- MAINCONTENT -->
-<div class="container-fluid">    
-  <div class="row mainRow seafoam">
-    <div class="col-md-12 heroContent">
-      <h1>In one click, reach all the babysitters in your neighborhood.</h1>
-      <h1><span class="underlineSpan">35</span> babysitters are available at this very moment.</h1>
-      <h1>What are you waiting for?</h1>
-    </div>
-  </div> <!-- end mainRow -->
+<div id="app" class="container-fluid">    
+  
 
-  <div class="row sitterRow">
-    <div class="col-md-12">
-      <h2>Favorite Sitters</h2>
-
-      <div class="col-md-2 box text-center favSitter">
-        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 1</p>  
-        
-        <button type="button" class="btn btn-default"> Book Sitter
-        </button>
-      </div>
-
-      <div class="col-md-2 box text-center favSitter">
-        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 2</p>  
-        
-        <button type="button" class="btn btn-default"> Book Sitter
-        </button>
-      </div>
-
-      <div class="col-md-2 box text-center favSitter">
-        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 3</p>  
-        
-        <button type="button" class="btn btn-default"> Book Sitter
-        </button>
-      </div>
-
-      <div class="col-md-2 box text-center favSitter">
-        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 4</p>  
-        
-        <button type="button" class="btn btn-default"> Book Sitter
-        </button>
-      </div>
-
-      <div class="col-md-2 box text-center favSitter">
-        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 5</p>  
-        
-        <button type="button" class="btn btn-default"> Book Sitter
-        </button>
-      </div>
-
-      <div class="col-md-2 box text-center favSitter">
-        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> sitter 6</p>  
-        
-        <button type="button" class="btn btn-default"> Book Sitter
-        </button>
-      </div>
-
-
-
-    </div> <!-- end container of all fav sitters -->
-  </div> <!-- end favSitterRow -->
-
-  <div class="row allSitters">
-    <div class="col-md-12">
-      <h2>All Sitters</h2>
-    </div>
-  </div>
 
 </div>
   <!-- Scripts: jQuery, Tether, Bootstrap JS-->
@@ -134,6 +72,7 @@
 
 <!-- Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bundle.js"></script>
 
 
 
@@ -146,8 +85,8 @@
 
 
 
-	<script type="text/javascript">
+<!--	<script type="text/javascript">
 		var user = JSON.parse({% userContext %})
-	</script>
-	<bundle.js>
+	</script> -->
+
 </body>

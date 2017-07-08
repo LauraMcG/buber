@@ -1,17 +1,17 @@
 var React = require("react");
 
-var Register = React.createClass({
+var All-Sitters = React.createClass({
 	render: function(){
 		return (
 			<div className="row allSitters">
 		    <div className="col-md-12">
-		      <h2>Register</h2>
+		      <h2>All Sitters</h2>
 		    </div>
 		  </div>
 		)
 	}
 })
 
-module.exports = Register;
+module.exports = All-Sitters;
 
 	

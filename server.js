@@ -60,5 +60,5 @@ var db = mongoose.connection;
 
 //Server Listener
 app.listen(PORT, function() {
-  console.log('App listening');
+  console.log('App listening on ' + PORT);
 });
