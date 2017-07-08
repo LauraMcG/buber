@@ -15,11 +15,13 @@ var ParentSchema = new Schema({
   },
   phoneNumber: {
     type: String,
+    unique: false,
     required: true 
   },
   //Potential   
   numChildren: {
     type: Number,
+    unique: false,
     required: true
   },
   emergencyFirstName: {
@@ -36,6 +38,7 @@ var ParentSchema = new Schema({
   }, 
   emergencyPhoneNumber: {
     type: String,
+    unique: false,
     required: true 
   },
   doctorLastName: {
@@ -46,19 +49,22 @@ var ParentSchema = new Schema({
   },
   doctorPhoneNumber: {
     type: String,
+    unique: false,
     required: true 
-  },
-  wifiDomain: {
+  },  wifiDomain: {
     type: String,
+    unique: false,
     required: false 
   },
   wifiPassword: {
     type: String,
+    unique: false,
     required: false 
   },
   //Potential join table here to store info for fav sitters
   favSitters:{
     type: Number,
+    unique: false,
     required: true,
     default: 0
   },

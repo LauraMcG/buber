@@ -17,8 +17,7 @@ router.get("/appointments", function(req, res) {
     });
 });
 
-// Route to get all Appointments by _parentID
-
+// Route to get all of the populated appointments 
 router.get("/appointments/pop", function(req, res) {
   //query to find all appointments
   Appointment.find({})
@@ -35,6 +34,41 @@ router.get("/appointments/pop", function(req, res) {
     });
 });
 
+// // Route to get all of the appointments for an individual parent
+// router.get("/appointments/parent/:id", function(req, res) {
+//   //query to find all appointments
+//   Appointment.find({"_parentID" : req.params.id })
+//     .populate("_parentID", "firstName")
+//     .populate("_babysitterID")
+//     .exec(function(err, doc) {
+
+//       if (err) {
+//         console.log(err);
+//       }
+//       else {
+//         res.json(doc);
+//       }
+//     });
+// });
+
+// // Route to get all of the appointments for an individual babysitter
+// router.get("/appointments/babysitter/:id", function(req, res) {
+//   //query to find all appointments with the babysitter id in the params
+//   Appointment.find({"_babysitterID" : req.params.id })
+//     .populate("_parentID", "firstName")
+//     .populate("_babysitterID")
+//     .exec(function(err, doc) {
+
+//       if (err) {
+//         console.log(err);
+//       }
+//       else {
+//         res.json(doc);
+//       }
+//     });
+// });
+
+
 // // // Route to get individual Appointment Information
 router.get("/appointments/:id", function(req, res) {
   var id = req.params.id;
@@ -50,6 +84,8 @@ router.get("/appointments/:id", function(req, res) {
       }
     });
 });
+
+
 
 // // // Route to add new Appointment to database
 router.post("/appointments", function(req, res) {
@@ -93,7 +129,5 @@ router.delete("/appointments/:id", function(req, res) {
     }
   });
 });
-
-
 
 module.exports = router;

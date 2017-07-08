@@ -26,31 +26,38 @@ var BabysitterSchema = new Schema({
   //Gender is a categorized variable with numerical data
   gender: {
     type: Number,
+    unique: false,
     required: true 
   },
   isAvailable: {
     type: Boolean,
+    unique: false,
     required: true 
   },
   phoneNumber: {
     type: String,
+    unique: false,
     required: true 
   },
   bio: {
     type: String,
+    unique: false,
     required: false
   },
   certifications: {
     type: String,
+    unique: false,
     required: false
   },
   ratePerHour: {
     type: Number,
+    unique: false,
     required: true
   },
   //Potential join table for storing the info for families that favorite the babysitters
   numFavs: {
     type: Number,
+    unique: false,
     required: true,
     default: 0
   }    
