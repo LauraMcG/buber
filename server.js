@@ -16,7 +16,7 @@ var PORT = process.env.PORT || 8080;
 
 // set up express to use passport
 // app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true}));
-// app.use(passport.initialize());
+app.use(passport.initialize());
 // app.use(passport.session());
 
 // Body Parser and Logger Config
