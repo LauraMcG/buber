@@ -8,6 +8,7 @@ router.get("/appointments", function(req, res) {
 
   Appointment.find({})
     .exec(function(err, doc) {
+      console.log(doc);
 
       if (err) {
         console.log(err);
