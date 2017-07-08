@@ -7,6 +7,7 @@ var Appointment = require("../models/Appointment")
 router.get("/appointments", function(req, res) {
   Appointment.find({})
     .exec(function(err, doc) {
+      console.log(doc);
 
       if (err) {
         console.log(err);
@@ -34,22 +35,23 @@ router.get("/appointments/pop", function(req, res) {
     });
 });
 
-// // Route to get all of the appointments for an individual parent
-// router.get("/appointments/parent/:id", function(req, res) {
-//   //query to find all appointments
-//   Appointment.find({"_parentID" : req.params.id })
-//     .populate("_parentID", "firstName")
-//     .populate("_babysitterID")
-//     .exec(function(err, doc) {
 
-//       if (err) {
-//         console.log(err);
-//       }
-//       else {
-//         res.json(doc);
-//       }
-//     });
-// });
+// Route to get all of the appointments for an individual parent
+router.get("/appointments/parents/:id", function(req, res) {
+  //query to find all appointments
+  Appointment.find({"_parentID" : req.params.id })
+    .populate("_parentID", "firstName")
+    // .populate("_babysitterID")
+    .exec(function(err, doc) {
+
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.json(doc);
+      }
+    });
+});
 
 // // Route to get all of the appointments for an individual babysitter
 // router.get("/appointments/babysitter/:id", function(req, res) {
