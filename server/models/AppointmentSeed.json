@@ -1,8 +1,14 @@
 {
-	"_babysitterID": "YOUR SEED ID",
-	"_parentID": " YOUR SEED ID",
+	"_babysitterID": ObjectID("YOUR LOCAL BABYSITTER ID"),
+	"_parentID": ObjectID("YOUR LOCAL BABYSITTER ID"),
 	"apptDateTime": "2012-04-23T18:25:43.511Z",
 	"requestDateTime": "2012-04-23T18:25:43.511Z",
 	"projectedDuration": 1,
 	"sitterAccepted": true
 }
+
+To add this:
+
+go to your appointments collection in robomongo
+right click, select insert document
+copy and paste the above, and add your local id's
