@@ -119,22 +119,29 @@ var Register = React.createClass({
 			firstName: '',
 			lastName: '',
 			email: '',
-			password: '',
-			role: ''
+			password: ''
 		};
 	},
-	onSubmit: function (e, userData){
+	handleChange: function(event){
+		var newState = {};
+    newState[event.target.name] = event.target.value;
+    this.setState(newState);
+	},
+	handleOptionChange: function (changeEvent) {
+	  this.setState({
+	    selectedRole: changeEvent.target.value
+	  });
+	},
+	onSubmit: function (e){
 		e.preventDefault();
-		this.setState({role: userData.role});
-		console.log(this.state.role);
-		helpers.postUser(userData.firstName, userData.lastName, userData.email, userData.password, userData.role).then(function(){
-			console.log(this.state.role)
-		})
+		helpers.postUser(this.state.firstName, this.state.lastName, this.state.email, this.state.password, this.state.selectedRole).then(function(){
+			console.log(this.state.selectedRole)
+		}.bind(this));
 	},
 	render: function(){
-		if (this.state.role == 1){
+		if (this.state.selectedRole == 1){
 			return <ParentProfile/>;
-		} else if (this.state.role == 2){
+		} else if (this.state.selectedRole == 2){
 			return <SitterProfile/>;
 		} else {
 			return (
@@ -145,27 +152,27 @@ var Register = React.createClass({
 					      <form method="POST" action="/users">
 					      	<div className="form-group">
 					          <label className="control-label" htmlFor="firstName">First Name</label>
-					          <input className="form-control" name="firstName" id="firstName" required/>
+					          <input className="form-control" name="firstName" id="firstName" value={this.state.firstName} onChange={this.handleChange} required/>
 					        </div>
 					        <div className="form-group">
 					          <label className="control-label" htmlFor="lastName">Last Name</label>
-					          <input name="lastName" className="form-control" id="lastName" required/>
+					          <input name="lastName" className="form-control" id="lastName" value={this.state.lastName} onChange={this.handleChange} required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="email" className="control-label col-sm-2">Email</label>
-					          <input type="email" className="form-control" name="email" id="email"  required/>
+					          <input type="email" className="form-control" name="email" id="email"  value={this.state.email} onChange={this.handleChange} required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="password" className="control-label col-sm-2">Password</label>
-					          <input className="form-control" name="password" type="password" id="password" pattern="[a-zA-Z0-9]{5,}" title="Password must include at least 5 letters/numbers" required/>
+					          <input className="form-control" name="password" type="password" id="password" pattern="[a-zA-Z0-9]{5,}" title="Password must include at least 5 letters/numbers" value={this.state.password} onChange={this.handleChange}required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="password" className="control-label col-sm-2">Are you registering as a Parent/Guardian or Babysitter?</label>
 						        <div className="radio">
-										  <label><input type="radio" name="role" value="1"/>Parent/Guardian</label>
+										  <label><input type="radio" name="role" value="1" checked= {this.state.selectedRole === 1} onChange={this.handleOptionChange} />Parent/Guardian</label>
 										</div>
 										<div className="radio">
-										  <label><input type="radio" name="role" value="2"/>Babysitter</label>
+										  <label><input type="radio" name="role" value="2"checked= {this.state.selectedRole === 2} onChange={this.handleOptionChange} />Babysitter</label>
 										</div>
 									</div>
 					        <div className="form-group">
