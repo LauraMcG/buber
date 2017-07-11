@@ -14,4 +14,14 @@ var helpers = {
         return response.data._id;
       });
   },
+
+  getAllBabysitters: function() {
+    return axios.get("/api/babysitters")
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
+  }
 }
+
+module.exports = helpers;
