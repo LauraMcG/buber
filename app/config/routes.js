@@ -23,7 +23,7 @@ var Login = require("../containers/Login");
 var Register = require("../containers/Register");
 
 var BabysitterView = require("../containers/babysitterView");
-
+var ParentView = require("../containers/parentView");
 
 // Export the Routes
 module.exports = (
@@ -36,7 +36,9 @@ module.exports = (
       <Route path="Register" component={Register} />
       <Route path="Login" component={Login} />
 
-      <Route path="babysitters" component={BabysitterView} />
+        <Route path="babysitters" component={BabysitterView} />
+        <Route path="parents" component={ParentView} />
+
 
       {/* If user selects any other path... we get the Home Route */}
       
