@@ -22,6 +22,8 @@ var Home = require("../containers/Home");
 var Login = require("../containers/Login");
 var Register = require("../containers/Register");
 
+var BabysitterView = require("../containers/babysitterView");
+
 
 // Export the Routes
 module.exports = (
@@ -34,7 +36,10 @@ module.exports = (
       <Route path="Register" component={Register} />
       <Route path="Login" component={Login} />
 
+      <Route path="babysitters" component={BabysitterView} />
+
       {/* If user selects any other path... we get the Home Route */}
+      
       <IndexRoute component={Register} />
 
     </Route>

@@ -2,6 +2,9 @@ var React = require("react");
 
 var Link = require("react-router").Link;
 
+var babysitterView = require ('../containers/babysitterView');
+
+
 var MainNav = React.createClass({
   render() {
     return(
@@ -28,8 +31,8 @@ var MainNav = React.createClass({
                   <div className="navLinkWrapper">
                       <div className="collapse navbar-collapse" id="cb-navbar-collapse-1">
                           <ul className="nav navbar-nav">
-                            <li><Link className="navlinks" to="/">Babysitters</Link></li>
-                            <li><Link className="navlinks" to="/">Parents</Link></li>
+                            <li><Link className="navlinks" to="/babysitters">Babysitters</Link></li>
+                            <li><Link className="navlinks" to="/parents">Parents</Link></li>
                           </ul>
                       </div>
                   </div>

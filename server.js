@@ -30,20 +30,30 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 app.use(express.static('./public'));
 
 //Passport middleware
-var authCheckMiddleware = require('./server/passport/auth-passport.js');
-app.use('/api', authCheckMiddleware);
+// var authCheckMiddleware = require('./server/passport/auth-passport.js');
+// app.use('/api', authCheckMiddleware);
+
+// adding userRoute
+var userRoutes = require("./server/routes/userRoutes");
+app.use("/", userRoutes);
 
 // adding parentRoute
-const parentRoutes = require("./server/routes/parentRoutes");
-app.use("/", parentRoutes);
+var parentRoutes = require("./server/routes/parentRoutes");
+app.use("/api", parentRoutes);
 
 // adding sitterRoute
-const babysitterRoutes = require("./server/routes/babysitterRoutes");
-app.use("/", babysitterRoutes);
+var babysitterRoutes = require("./server/routes/babysitterRoutes");
+app.use("/api", babysitterRoutes);
 
 // adding sitterRoute
-const appointmentRoutes = require("./server/routes/appointmentRoutes");
-app.use("/", appointmentRoutes);
+var appointmentRoutes = require("./server/routes/appointmentRoutes");
+app.use("/api", appointmentRoutes);
+
+
+//fallback route
+app.get('*', function(req,res){
+	res.sendFile(__dirname + '/public/index.html');
+});
 
 // Mongoose Setup
 mongoose.connect('mongodb://localhost/buber');
@@ -57,6 +67,7 @@ var db = mongoose.connection;
   db.once('openUri', function() {
     console.log('mongoose connection successful');
   });
+
 
 //Server Listener
 app.listen(PORT, function() {

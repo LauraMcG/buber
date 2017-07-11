@@ -5,7 +5,7 @@ var router = express.Router();
 var User = require("../models/User")
 
 // Route to get all Users
-router.get("/Users", function(req, res) {
+router.get("/users", function(req, res) {
   User.find({})
     .exec(function(err, doc) {
 
@@ -20,7 +20,7 @@ router.get("/Users", function(req, res) {
 });
 
 // Route to get new User profile page
-router.get("/Users/:id", function(req, res) {
+router.get("/users/:id", function(req, res) {
   var id = req.params.id;
 
   User.findOne({'_id': id})
@@ -36,7 +36,7 @@ router.get("/Users/:id", function(req, res) {
 });
 
 // Route to add new User to database
-router.post("/Users", function(req, res) {
+router.post("/users", function(req, res) {
   var newUser = new User(req.body);
   console.log(newUser);
 
@@ -52,7 +52,7 @@ router.post("/Users", function(req, res) {
 
 // Update User in database
 
-router.put("/Users/:id", function(req, res) {
+router.put("/users/:id", function(req, res) {
   
       var id = req.params.id;
 
@@ -68,7 +68,7 @@ router.put("/Users/:id", function(req, res) {
   })
 
 // User Delete Route
-router.delete("/Users/:id", function(req, res) {
+router.delete("/users/:id", function(req, res) {
   var id = req.params.id;
 
   User.find({'_id': id}).remove().exec( 
