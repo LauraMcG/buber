@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // var Link = require("react-router").Link;
 
 import helpers from '../utils/helpers';
-
+import BabysitterList from '../components/babysitter-list'
 
 //data
 
@@ -12,13 +12,11 @@ class ParentView extends Component {
 
 	constructor(props) {
 		super(props);
-	
 
 		this.state = {
 			babysitters: [],
 			selectedBabysitter: null
 		};
-
 	}
 
 	componentDidMount() {
@@ -31,7 +29,9 @@ class ParentView extends Component {
 	render () {
 		return (
 			<div>
-				<h1>we did it!!!</h1>
+				<BabysitterList 
+					babysitters = {this.state.babysitters}
+				/>
 			</div>
 		);
 	}
