@@ -12,6 +12,57 @@
 	"bio": "Savvy babysitter biography",
 	"certifications": "First Aid",
 	"ratePerHour": 20.50,
-	"numFavs": 6
-} 
+	"numFavs": 12
+},
+
+{
+	"firstName": "Maggie",
+	"lastName": "Storino", 
+	"birthdayMonth": 10,
+	"birthdayDay": 25,
+	"birthdayYear": 1990,
+	"gender": 1,
+	"email": "maggie@email.com", 
+	"password": "something",
+	"isAvailable": true,
+	"phoneNumber": "3122292590",
+	"bio": "I'm a terrible babysitter but I'll keep your kids alive and teach them code.",
+	"certifications": "CPR",
+	"ratePerHour": 10,
+	"numFavs": 5
+},
+
+{
+	"firstName": "Taniesha",
+	"lastName": "Robinson", 
+	"birthdayMonth": 7,
+	"birthdayDay": 26,
+	"birthdayYear": 1989,
+	"gender": 1,
+	"email": "tanishar@email.com", 
+	"password": "something",
+	"isAvailable": true,
+	"phoneNumber": "8471234567",
+	"bio": "I love cats",
+	"certifications": "NU developer of the year 2017",
+	"ratePerHour": 14,
+	"numFavs": 80
+},   
+
+{
+	"firstName": "Laura",
+	"lastName": "McGinn", 
+	"birthdayMonth": 7,
+	"birthdayDay": 4,
+	"birthdayYear": 1990,
+	"gender": 1,
+	"email": "lauramg@email.com", 
+	"password": "something",
+	"isAvailable": true,
+	"phoneNumber": "3121234567",
+	"bio": "As an artist, I entertain your children for hours with endless artistic endevours",
+	"certifications": "Udemy: React Graduate",
+	"ratePerHour": 20,
+	"numFavs": 100
+},     
 
