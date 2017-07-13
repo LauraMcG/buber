@@ -19,8 +19,8 @@ var browserHistory = router.browserHistory;
 
 // Reference the high-level components
 var Home = require("../containers/Home");
-var Login = require("../containers/Login");
-var Register = require("../containers/Register");
+var Login = require("../components/login.js");
+var Register = require("../components/Register");
 
 
 // Export the Routes
