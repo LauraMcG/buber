@@ -18,7 +18,7 @@ var ParentProfile = React.createClass({
 				          <input name="phoneNumber" className="form-control" id="phoneNumber" required/>
 				        </div>
 				        <div className="form-group">
-				          <label htmlFor="numChildren" className="control-label col-sm-2">numChildren</label>
+				          <label htmlFor="numChildren" className="control-label col-sm-2">Number of Children</label>
 				          <input type="numChildren" className="form-control" name="numChildren" id="numChildren"  required/>
 				        </div>
 				        <div className="form-group">
@@ -38,16 +38,16 @@ var ParentProfile = React.createClass({
 				          <input type="doctorLastName" className="form-control" name="doctorLastName" id="doctorLastName"  required/>
 				        </div>
 				        <div className="form-group">
-				          <label htmlFor="doctorPhoneNumber" className="control-label col-sm-2">Doctor Last Name</label>
+				          <label htmlFor="doctorPhoneNumber" className="control-label col-sm-2">Doctor Phone Number</label>
 				          <input type="doctorPhoneNumber" className="form-control" name="doctorPhoneNumber" id="doctorPhoneNumber"  required/>
 				        </div>
 				        <div className="form-group">
 				          <label htmlFor="wifiPassword" className="control-label col-sm-2">Wifi Password</label>
-				          <input type="wifiPassword" className="form-control" name="wifiPassword" id="wifiPassword"  required/>
+				          <input type="wifiPassword" className="form-control" name="wifiPassword" id="wifiPassword"  />
 				        </div>
 				        <div className="form-group">
 				          <label htmlFor="favSitters" className="control-label col-sm-2">Favorite Sitters</label>
-				          <input type="favSitters" className="form-control" name="favSitters" id="favSitters"  required/>
+				          <input type="favSitters" className="form-control" name="favSitters" id="favSitters" />
 				        </div>
 				        <div className="form-group">
 				          <button className="btn btn-primary" type="submit" id="parent-submit">Submit</button>
@@ -64,7 +64,7 @@ var SitterProfile = React.createClass({
 		return (
 			<div className="row">
 		    <div className="col-md-12">
-				      <h2>Parent Profile</h2>
+				      <h2>Sitter Profile</h2>
 				      <form method="POST" action="/babysitters">
 				      	<div className="form-group">
 				          <label className="control-label" htmlFor="birthdayMonth">Birthday Month</label>
@@ -119,8 +119,10 @@ var Register = React.createClass({
 			firstName: '',
 			lastName: '',
 			email: '',
-			password: ''
+			password: '',
+			submitted: 'false'
 		};
+
 	},
 	handleChange: function(event){
 		var newState = {};
@@ -134,14 +136,14 @@ var Register = React.createClass({
 	},
 	onSubmit: function (e){
 		e.preventDefault();
-		helpers.postUser(this.state.firstName, this.state.lastName, this.state.email, this.state.password, this.state.selectedRole).then(function(){
-			console.log(this.state.selectedRole)
+		helpers.postUser(this.state.firstName, this.state.lastName, this.state.email, this.state.password, this.state.selectedRole).then(function(response){
+			this.setState({'submitted': true });
 		}.bind(this));
 	},
 	render: function(){
-		if (this.state.selectedRole == 1){
+		if (this.state.selectedRole == 1 && this.state.submitted == true){
 			return <ParentProfile/>;
-		} else if (this.state.selectedRole == 2){
+		} else if (this.state.selectedRole == 2 && this.state.submitted == true){
 			return <SitterProfile/>;
 		} else {
 			return (

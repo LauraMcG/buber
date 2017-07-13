@@ -11,10 +11,12 @@ var helpers = {
     };
     return axios.post("/api/users", newUser)
       .then(function(response) {
-        console.log("axios results ", response.data._id);
-        return response.data._id;
+        var data = response.data._id;
+        return data
       });
-  },
+    console.log(data);
+  }
+
 }
 
 module.exports = helpers;
