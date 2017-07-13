@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 
 import helpers from '../utils/helpers';
 import BabysitterList from '../components/babysitter-list'
+import BabysitterDetail from '../components/babysitter-detail'
+import AppointmentForm from '../components/appointment-form'
 
 //data
 
@@ -29,9 +31,12 @@ class ParentView extends Component {
 	render () {
 		return (
 			<div>
-				<BabysitterList 
-					babysitters = {this.state.babysitters}
+				<BabysitterDetail babysitter={this.state.selectedBabysitter} 
 				/>
+
+				<BabysitterList 
+					onBabysitterSelect = {selectedBabysitter => this.setState({selectedBabysitter}) }
+					babysitters = {this.state.babysitters} />
 			</div>
 		);
 	}

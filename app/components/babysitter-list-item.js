@@ -1,18 +1,12 @@
 import React from 'react';
 
-const BabysitterListItem = ({babysitter}) => {
+const BabysitterListItem = ({babysitter, onBabysitterSelect}) => {
 
 	return (
-		<li className="list-group-item">
-			<div className="video-list media">
-				<div className="media-body">
-					<div className="media-heading">
-						{babysitter.firstName}
-					</div>
-				</div>
-			</div>
-
-
+			<li key={babysitter._id}
+			onClick={() => onBabysitterSelect(babysitter)}
+			>
+			{babysitter.phoneNumber}
 		</li>
 	);
 };

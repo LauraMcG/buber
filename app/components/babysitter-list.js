@@ -4,7 +4,9 @@ import BabysitterListItems from './babysitter-list-item';
 const BabysitterList = (props) => {
 	const babysitterItems = props.babysitters.map((babysitter) => {
 		return (
-				<BabysitterListItems babysitter={babysitter} />
+				<BabysitterListItems onBabysitterSelect={props.onBabysitterSelect}
+				key={babysitter._id}
+				babysitter={babysitter} />
 		);
 	});
 
