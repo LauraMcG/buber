@@ -34,6 +34,11 @@ var AppointmentSchema = new Schema ({
 		type: Boolean,
 		unique: false,
 		required: true
+	},
+	appointmentBooked: {
+		type: Boolean,
+		unique: false,
+		required: true
 	}
 });
 

@@ -21,6 +21,14 @@ var helpers = {
         console.log("axios results", results);
         return results;
       });
+  },
+
+  getAllAppointments: function() {
+    return axios.get("/api/appointments")
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
   }
 }
 
