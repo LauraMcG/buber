@@ -31,11 +31,12 @@ var helpers = {
       });
   },
 
-  postAppointment: function(apptDateTime, projectedDuration, appointmentBooked) {
+  postAppointment: function(apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
     var newAppt = { 
       apptDateTime: apptDateTime,
       projectedDuration: projectedDuration,
-      // appointmentBooked: appointmentBooked
+      sitterAccepted: sitterAccepted,
+      appointmentBooked: appointmentBooked
       };
     return axios.post("/api/appointments", newAppt)
       .then(function(response) {
