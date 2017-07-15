@@ -16,7 +16,7 @@ var ParentProfile = React.createClass({
 			doctorLastName: '',
 			doctorPhoneNumber: '',
 			wifiPassword: '',
-			submitted: 'false'
+			submitted: false
 		};
 	},
 	handleChange: function(event){
@@ -31,7 +31,7 @@ var ParentProfile = React.createClass({
 		}.bind(this));
 	},
 	render: function(){
-		if (this.state.submitted === true){
+		if (this.state.submitted){
 			return(
 					<ParentView
 						_parentID = {this.state.parentID} 
@@ -51,7 +51,7 @@ var ParentProfile = React.createClass({
 				<div className="row">
 			    <div className="col-md-12">
 					      <h2>Parent Profile</h2>
-					      <form method="POST" action="/parents">
+					      <form method="POST" action="api/parents">
 					      	<div className="form-group">
 					          <label className="control-label" htmlFor="address">Address</label>
 					          <input className="form-control" name="address" id="address" value={this.state.address} onChange={this.handleChange} required/>

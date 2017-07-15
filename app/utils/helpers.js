@@ -48,7 +48,7 @@ var helpers = {
       ratePerHour: ratePerHour,
       numFavs: numFavs
     };
-    return axios.post("/api/parents", newSitter)
+    return axios.post("/api/babysitters", newSitter)
       .then(function(response){
         return response.data
       });
