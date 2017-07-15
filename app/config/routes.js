@@ -21,8 +21,10 @@ var browserHistory = router.browserHistory;
 var Home = require("../containers/Home");
 var Login = require("../containers/Login");
 var Register = require("../containers/Register");
-
+var SitterProfile = require("../components/register/SitterProfile");
+var ParentProfile = require("../components/register/ParentProfile");
 var BabysitterView = require("../containers/babysitterView");
+var ParentView = require("../containers/parentView");
 
 
 // Export the Routes
@@ -36,7 +38,11 @@ module.exports = (
       <Route path="Register" component={Register} />
       <Route path="Login" component={Login} />
 
+      <Route path="babysitters" component={SitterProfile} />
+      <Route path="parents" component={ParentProfile} />
+
       <Route path="babysitters" component={BabysitterView} />
+      <Route path="parents" component={ParentView} />
 
       {/* If user selects any other path... we get the Home Route */}
       

@@ -58,7 +58,7 @@ var BabysitterSchema = new Schema({
   numFavs: {
     type: Number,
     unique: false,
-    // required: true,
+    required: false,
     default: 0
   }    
 });

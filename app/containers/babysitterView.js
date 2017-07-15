@@ -6,7 +6,7 @@ var BabysitterView = React.createClass({
 	render: function(){
 		
 		return (
-			<div><h1>hello</h1></div>
+			<div><h1>Babysitter View</h1></div>
 			
 		)
 	}

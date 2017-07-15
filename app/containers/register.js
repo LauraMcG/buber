@@ -1,117 +1,9 @@
 var React = require("react");
 var helpers = require("../utils/helpers");
+var ParentProfile = require("../components/register/ParentProfile");
+var SitterProfile = require("../components/register/SitterProfile");
 var Link = require("react-router").Link;
 
-var ParentProfile = React.createClass({
-	render: function(){
-		return (
-			<div className="row">
-		    <div className="col-md-12">
-				      <h2>Parent Profile</h2>
-				      <form method="POST" action="/parents">
-				      	<div className="form-group">
-				          <label className="control-label" htmlFor="address">Address</label>
-				          <input className="form-control" name="address" id="address" required/>
-				        </div>
-				        <div className="form-group">
-				          <label className="control-label" htmlFor="phoneNumber">Phone Number</label>
-				          <input name="phoneNumber" className="form-control" id="phoneNumber" required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="numChildren" className="control-label col-sm-2">Number of Children</label>
-				          <input type="numChildren" className="form-control" name="numChildren" id="numChildren"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="emergencyFirstName" className="control-label col-sm-2">Emergency First Name</label>
-				          <input type="emergencyFirstName" className="form-control" name="emergencyFirstName" id="emergencyFirstName"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="emergencyLastName" className="control-label col-sm-2">Emergency Last Name</label>
-				          <input type="emergencyLastName" className="form-control" name="emergencyLastName" id="emergencyLastName"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="emergencyPhoneNumber" className="control-label col-sm-2">Emergency Phone Number</label>
-				          <input type="emergencyPhoneNumber" className="form-control" name="emergencyPhoneNumber" id="emergencyPhoneNumber"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="doctorLastName" className="control-label col-sm-2">Doctor Last Name</label>
-				          <input type="doctorLastName" className="form-control" name="doctorLastName" id="doctorLastName"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="doctorPhoneNumber" className="control-label col-sm-2">Doctor Phone Number</label>
-				          <input type="doctorPhoneNumber" className="form-control" name="doctorPhoneNumber" id="doctorPhoneNumber"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="wifiPassword" className="control-label col-sm-2">Wifi Password</label>
-				          <input type="wifiPassword" className="form-control" name="wifiPassword" id="wifiPassword"  />
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="favSitters" className="control-label col-sm-2">Favorite Sitters</label>
-				          <input type="favSitters" className="form-control" name="favSitters" id="favSitters" />
-				        </div>
-				        <div className="form-group">
-				          <button className="btn btn-primary" type="submit" id="parent-submit">Submit</button>
-				        </div>
-				      </form>
-		    </div>
-		  </div>
-		)
-	}
-})
-
-var SitterProfile = React.createClass({
-	render: function(){
-		return (
-			<div className="row">
-		    <div className="col-md-12">
-				      <h2>Sitter Profile</h2>
-				      <form method="POST" action="/babysitters">
-				      	<div className="form-group">
-				          <label className="control-label" htmlFor="birthdayMonth">Birthday Month</label>
-				          <input className="form-control" name="birthdayMonth" id="birthdayMonth" required/>
-				        </div>
-				        <div className="form-group">
-				          <label className="control-label" htmlFor="birthdayDay">Birthday Day</label>
-				          <input name="birthdayDay" className="form-control" id="birthdayDay" required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="birthdayYear" className="control-label col-sm-2">Birthday Year</label>
-				          <input type="birthdayYear" className="form-control" name="birthdayYear" id="birthdayYear"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="gender" className="control-label col-sm-2">Gender</label>
-				          <input type="gender" className="form-control" name="gender" id="gender"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="isAvailable" className="control-label col-sm-2">Are you available now?</label>
-				          <input type="isAvailable" className="form-control" name="isAvailable" id="isAvailable"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="PhoneNumber" className="control-label col-sm-2">Phone Number</label>
-				          <input type="PhoneNumber" className="form-control" name="PhoneNumber" id="PhoneNumber"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="bio" className="control-label col-sm-2">Bio</label>
-				          <input type="bio" className="form-control" name="bio" id="bio"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="certifications" className="control-label col-sm-2">Certifications</label>
-				          <input type="certifications" className="form-control" name="certifications" id="certifications"  required/>
-				        </div>
-				        <div className="form-group">
-				          <label htmlFor="ratePerHour" className="control-label col-sm-2">Rate Per Hour</label>
-				          <input type="ratePerHour" className="form-control" name="ratePerHour" id="ratePerHour"  required/>
-				        </div>
-				       
-				        <div className="form-group">
-				          <button className="btn btn-primary" type="submit" id="sitter-submit">Submit</button>
-				        </div>
-				      </form>
-		    </div>
-		  </div>
-		)
-	}
-})
 
 var Register = React.createClass({
 	getInitialState: function(){
@@ -136,15 +28,17 @@ var Register = React.createClass({
 	},
 	onSubmit: function (e){
 		e.preventDefault();
-		helpers.postUser(this.state.firstName, this.state.lastName, this.state.email, this.state.password, this.state.selectedRole).then(function(response){
-			this.setState({'submitted': true });
+		helpers.postUser(this.state.firstName, this.state.lastName, this.state.email, this.state.password, this.state.selectedRole).then(function(id){
+			this.setState({'submitted': true, 'id': id });
+			console.log(id);
 		}.bind(this));
 	},
 	render: function(){
-		if (this.state.selectedRole == 1 && this.state.submitted == true){
-			return <ParentProfile/>;
-		} else if (this.state.selectedRole == 2 && this.state.submitted == true){
-			return <SitterProfile/>;
+		if (this.state.selectedRole == 1 && this.state.submitted === true){
+			console.log("parent");
+			return <ParentProfile id={this.state.id}/>;
+		} else if (this.state.selectedRole == 2 && this.state.submitted === true){
+			return <SitterProfile id={this.state.id}/>;
 		} else {
 			return (
 				<div className="row">

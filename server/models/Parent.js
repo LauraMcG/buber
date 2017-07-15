@@ -65,7 +65,7 @@ var ParentSchema = new Schema({
   favSitters:{
     type: Number,
     unique: false,
-    required: true,
+    required: false,
     default: 0
   },
 });
