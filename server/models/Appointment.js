@@ -6,39 +6,39 @@ var AppointmentSchema = new Schema ({
 	_babysitterID: {
 		type: Schema.Types.ObjectId,
 		unique: false,
-		required: true, 
+		required: false, 
 		ref: 'BabySitter'
 	},
 	_parentID: {
 		type: Schema.Types.ObjectId,
 		unique: false,
-		required: true, 
+		required: false, 
 		ref: 'Parent'
 	},
 	apptDateTime: {
-		type: Date,
+		type: String,
 		unique: false,
-		required: true
+		required: false
 	},
 	requestDateTime: {
-		type: Date,
+		type: String,
 		unique: false,
-		required: true
+		required: false
 	},
 	projectedDuration: {
 		type: Number,
 		unique: false,
-		required: true
+		required: false
 	},
 	sitterAccepted: {
 		type: Boolean,
 		unique: false,
-		required: true
+		required: false
 	},
 	appointmentBooked: {
 		type: Boolean,
 		unique: false,
-		required: true
+		required: false
 	}
 });
 

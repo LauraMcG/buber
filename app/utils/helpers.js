@@ -29,6 +29,19 @@ var helpers = {
         console.log("axios results", results);
         return results;
       });
+  },
+
+  postAppointment: function(apptDateTime, projectedDuration, appointmentBooked) {
+    var newAppt = { 
+      apptDateTime: apptDateTime,
+      projectedDuration: projectedDuration,
+      // appointmentBooked: appointmentBooked
+      };
+    return axios.post("/api/appointments", newAppt)
+      .then(function(response) {
+        console.log("axios results", response.data._id);
+        return response.data._id;
+      });
   }
 }
 

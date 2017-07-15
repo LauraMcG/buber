@@ -21,7 +21,7 @@ class ParentView extends Component {
 			babysitters: [],
 			selectedBabysitter: null,
 			appointments: [],
-			bookedAppointment: false,
+			showAppointmentForm: false,
 			babysitterID: null,
 		};
 
@@ -71,8 +71,8 @@ class ParentView extends Component {
 				<BabysitterDetail 
 					babysitter={this.state.selectedBabysitter}
 					appointment={this.state.appointments}
-					bookedAppointment={this.state.bookedAppointment}
-					handleAppointment={handleAppointment => this.setState({bookedAppointment:true, babysitter: this.state.babysitter}) }
+					showAppointmentForm={this.state.showAppointmentForm}
+					handleAppointment={handleAppointment => this.setState({showAppointmentForm:true, babysitter: this.state.babysitter, appointment:this.state.appointment}) }
 				/>
 
 				<BabysitterList 
