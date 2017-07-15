@@ -5,8 +5,10 @@ var Appointment = require("../models/Appointment")
 
 // Route to get all Appointments
 router.get("/appointments", function(req, res) {
+
   Appointment.find({})
     .exec(function(err, doc) {
+      console.log(doc);
 
       if (err) {
         console.log(err);
@@ -17,9 +19,8 @@ router.get("/appointments", function(req, res) {
     });
 });
 
-// Route to get all Appointments by _parentID
-
-router.get("/appointments/pop", function(req, res) {
+// Route to get all of the populated appointments 
+router.get("/appointments/populate", function(req, res) {
   //query to find all appointments
   Appointment.find({})
     .populate("_parentID", "firstName")
@@ -34,6 +35,39 @@ router.get("/appointments/pop", function(req, res) {
       }
     });
 });
+
+// Route to get all of the appointments for an individual parent
+router.get("/appointments/parents/:id", function(req, res) {
+  //query to find all appointments
+
+  Appointment.find({"_parentID" : req.params.id})
+    .populate("_babysitterID")
+    .exec(function(err, doc) {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.json(doc);
+      }
+    });
+});
+
+// Route to get all of the appointments for an individual babysitter
+router.get("/appointments/babysitters/:id", function(req, res) {
+  //query to find all appointments with the babysitter id in the params
+  Appointment.find({ "_babysitterID" : req.params.id })
+    .populate("_parentID")
+    .exec(function(err, doc) {
+
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.json(doc);
+      }
+    });
+});
+
 
 // // // Route to get individual Appointment Information
 router.get("/appointments/:id", function(req, res) {
@@ -50,6 +84,7 @@ router.get("/appointments/:id", function(req, res) {
       }
     });
 });
+
 
 // // // Route to add new Appointment to database
 router.post("/appointments", function(req, res) {
@@ -94,6 +129,5 @@ router.delete("/appointments/:id", function(req, res) {
   });
 });
 
-
-
 module.exports = router;
+
