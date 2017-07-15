@@ -14,11 +14,7 @@ import AppointmentForm from './appointment-form';
 const BabysitterDetail = ({babysitter, appointment, bookedAppointment, handleAppointment}) => {
 
  //    // conditionally render the popup element based on current state
- //    const appointmentForm = (this.state.bookedAppointment ? <AppointmentForm /> : null);
-
- //    if (!props.babysitter) {
-	// 	return <div>Select a babysitter to view profile.</div>;
-	// }
+    // const appointmentForm = (this.state.bookedAppointment ? <AppointmentForm /> : null);
 
  //    return (
  //      <ul>
@@ -32,22 +28,27 @@ const BabysitterDetail = ({babysitter, appointment, bookedAppointment, handleApp
  //    )
   
 
+
+
 // this is to check on the status for rendering
 	if (!babysitter) {
 		return <div>Select a babysitter to view profile.</div>;
 	}
 
-	const appointmentForm = (bookedAppointment ? <AppointmentForm /> : null);
+	const appointmentForm = (bookedAppointment ? <AppointmentForm 
+			babysitter={babysitter}
+		/> : null);
 
 	return (
+		
 		<div className="details">
+		{appointmentForm}
 			
 			<div>{babysitter.bio}</div>
 			<div><button 
 				className="btn btn-default" 
 				onClick={()=> 
-					event.preventDefault(),
-					handleAppointment(babysitter._id)}
+					handleAppointment()}
 			>Book me!</button></div>
 		
 		</div>

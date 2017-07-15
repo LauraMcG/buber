@@ -8,6 +8,8 @@ import BabysitterList from '../components/babysitter-list'
 import BabysitterDetail from '../components/babysitter-detail'
 import AppointmentForm from '../components/appointment-form'
 
+import SearchBar from './search-bar'
+
 //data
 
 class ParentView extends Component {
@@ -23,17 +25,26 @@ class ParentView extends Component {
 			babysitterID: null,
 		};
 
-		this.handleAppointment=this.handleAppointment.bind(this);
+		// this.handleAppointment=this.handleAppointment.bind(this);
 	}
 
+	// //callback for search
+	// babysitterSearch(term){
+	// 	this.setState({
+	// 		babysitters:babysitters,
+	// 		selectedBabysitter:babysitters[0]
+	// 	});
+	// }
 
-	handleAppointment(babysitterID) {
 
-		this.setState ({
-			babysitterID: babysitterID,
-			bookedAppointment: true
-		});
-	}
+	// handleAppointment(babysitterID) {
+
+	// 	this.setState ({
+	// 		babysitterID: babysitterID,
+	// 		bookedAppointment: true
+	// 	});
+	// }
+	
 
 
 	componentDidMount() {
@@ -51,13 +62,17 @@ class ParentView extends Component {
 		}.bind(this));
 	}
 
+	// <SearchBar onSearchTermChange = {babysitterSearch } />
+
 	render () {
 		return (
 			<div>
+				
 				<BabysitterDetail 
 					babysitter={this.state.selectedBabysitter}
 					appointment={this.state.appointments}
-					handleAppointment={handleAppointment=>this.state.bookedAppointment}
+					bookedAppointment={this.state.bookedAppointment}
+					handleAppointment={handleAppointment => this.setState({bookedAppointment:true, babysitter: this.state.babysitter}) }
 				/>
 
 				<BabysitterList 
