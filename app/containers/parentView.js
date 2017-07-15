@@ -7,6 +7,7 @@ import helpers from '../utils/helpers';
 import BabysitterList from '../components/babysitter-list'
 import BabysitterDetail from '../components/babysitter-detail'
 import AppointmentForm from '../components/appointment-form'
+import AppointmentList from '../components/appointment-list'
 
 import SearchBar from './search-bar'
 
@@ -24,7 +25,6 @@ class ParentView extends Component {
 			bookedAppointment: false,
 			babysitterID: null,
 		};
-
 		// this.handleAppointment=this.handleAppointment.bind(this);
 	}
 
@@ -67,6 +67,9 @@ class ParentView extends Component {
 	render () {
 		return (
 			<div>
+				<AppointmentList 
+					appointments= {this.state.appointments}
+				/>
 				
 				<BabysitterDetail 
 					babysitter={this.state.selectedBabysitter}
