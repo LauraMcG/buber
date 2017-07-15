@@ -6,7 +6,7 @@ var Link = require("react-router").Link;
 var ParentProfile = React.createClass({
 	getInitialState: function(){
 		return {
-			_parentID: '',
+			_userID: this.props.id,
 			address: '',
 			phoneNumber: '',
 			numChildren: '',
@@ -26,7 +26,7 @@ var ParentProfile = React.createClass({
 	},
 	onSubmit: function(e){
 		e.preventDefault();
-		helpers.postParent(this.props.id, this.state.address, this.state.phoneNumber, this.state.numChildren, this.state.emergencyFirstName, this.state.emergencyLastName, this.state.emergencyPhoneNumber, this.state.doctorLastName, this.state.doctorPhoneNumber, this.state.wifiPassword).then(function(data){
+		helpers.postParent(this.state._userID, this.state.address, this.state.phoneNumber, this.state.numChildren, this.state.emergencyFirstName, this.state.emergencyLastName, this.state.emergencyPhoneNumber, this.state.doctorLastName, this.state.doctorPhoneNumber, this.state.wifiPassword).then(function(data){
 				this.setState({'submitted': true, 'data': data});
 		}.bind(this));
 	},
@@ -34,7 +34,7 @@ var ParentProfile = React.createClass({
 		if (this.state.submitted){
 			return(
 					<ParentView
-						_parentID = {this.state.parentID} 
+						_userID = {this.props.id}
 			      address = {this.state.address} 
 			      phoneNumber = {this.state.phoneNumber} 
 			      numChildren = {this.state.numChildren} 

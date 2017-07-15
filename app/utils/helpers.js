@@ -16,9 +16,9 @@ var helpers = {
       });
     
   },
-  postParent: function(parentID, address, phoneNumber, numChildren, emergencyFirstName, emergencyLastName, emergencyPhoneNumber, doctorLastName, doctorPhoneNumber, wifiPassword){
+  postParent: function(userID, address, phoneNumber, numChildren, emergencyFirstName, emergencyLastName, emergencyPhoneNumber, doctorLastName, doctorPhoneNumber, wifiPassword){
     var newParent = {
-      _parentID: parentID, 
+      _userID: userID, 
       address: address, 
       phoneNumber: phoneNumber, 
       numChildren: numChildren, 
@@ -31,12 +31,12 @@ var helpers = {
     };
     return axios.post("/api/parents", newParent)
       .then(function(response){
-        return response.data
+        return response.data;
       });
   },
-  postSitter: function(babysitterID, birthdayMonth, birthdayDay, birthdayYear, gender, isAvailable, phoneNumber, bio, certifications, ratePerHour){
+  postSitter: function(userID, birthdayMonth, birthdayDay, birthdayYear, gender, isAvailable, phoneNumber, bio, certifications, ratePerHour, numFavs){
     var newSitter = {
-      _babysitterID: babysitterID,
+      _userID: userID,
       birthdayMonth: birthdayMonth,
       birthdayDay: birthdayDay,
       birthdayYear: birthdayYear,
@@ -50,7 +50,7 @@ var helpers = {
     };
     return axios.post("/api/babysitters", newSitter)
       .then(function(response){
-        return response.data
+        return response.data;
       });
   }
 

@@ -3,20 +3,20 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ParentSchema = new Schema({
-  _parentID: {
+  _userID: {
     type: Schema.Types.ObjectId,
     required: true, 
     ref: 'User'
   },
   address: {
-    type: String,
-    unique: false,
-    required: true 
+    type: String
+    // unique: false,
+    // required: true 
   },
   phoneNumber: {
-    type: String,
-    unique: false,
-    required: true 
+    type: String
+    // unique: false,
+    // required: true 
   },
   //Potential   
   numChildren: {
@@ -32,20 +32,20 @@ var ParentSchema = new Schema({
   },
   emergencyLastName: {
     type: String,
-    trim: true,
-    unique: false,
-    required: true 
+    trim: true
+    // unique: false,
+    // required: true 
   }, 
   emergencyPhoneNumber: {
-    type: String,
-    unique: false,
-    required: true 
+    type: String
+    // unique: false,
+    // required: true 
   },
   doctorLastName: {
     type: String,
-    trim: true,
-    unique: false,
-    required: true 
+    trim: true
+    // unique: false,
+    // required: true 
   },
   doctorPhoneNumber: {
     type: String,
