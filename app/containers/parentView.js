@@ -67,6 +67,7 @@ class ParentView extends Component {
 	render () {
 		return (
 			<div>
+				<h1>Welcome {this.props.emergencyFirstName}</h1>
 				<AppointmentList 
 					appointments= {this.state.appointments}
 				/>

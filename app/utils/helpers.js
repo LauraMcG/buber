@@ -16,7 +16,6 @@ var helpers = {
       });
     
   },
-<<<<<<< HEAD
   postParent: function(userID, address, phoneNumber, numChildren, emergencyFirstName, emergencyLastName, emergencyPhoneNumber, doctorLastName, doctorPhoneNumber, wifiPassword){
     var newParent = {
       _userID: userID, 
@@ -53,13 +52,7 @@ var helpers = {
       .then(function(response){
         return response.data;
       });
-  }
-
-}
-
-
-=======
-
+  },
   getAllBabysitters: function() {
     return axios.get("/api/babysitters")
       .then(function(results) {
@@ -88,7 +81,8 @@ var helpers = {
         return response.data._id;
       });
   }
+
 }
 
->>>>>>> master
+
 module.exports = helpers;
