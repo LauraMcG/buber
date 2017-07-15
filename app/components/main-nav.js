@@ -2,9 +2,6 @@ var React = require("react");
 
 var Link = require("react-router").Link;
 
-var babysitterView = require ('../containers/babysitterView');
-
-
 var MainNav = React.createClass({
   render() {
     return(
