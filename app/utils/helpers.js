@@ -69,8 +69,9 @@ var helpers = {
       });
   },
 
-  postAppointment: function(apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
+  postAppointment: function(_babysitterID, apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
     var newAppt = { 
+      _babysitterID:_babysitterID,
       apptDateTime: apptDateTime,
       projectedDuration: projectedDuration,
       sitterAccepted: sitterAccepted,

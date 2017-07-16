@@ -14,6 +14,7 @@ const BabysitterDetail = ({babysitter, appointment, showAppointmentForm, handleA
 	const appointmentForm = (showAppointmentForm ? <AppointmentForm 
 			babysitter={babysitter}
 			appointment={appointment}
+			showAppointmentForm={showAppointmentForm}
 		/> : null);
 
 	return (
@@ -25,7 +26,7 @@ const BabysitterDetail = ({babysitter, appointment, showAppointmentForm, handleA
 			<div><button 
 				className="btn btn-default" 
 				onClick={()=> 
-					handleAppointment()}
+					handleAppointment(babysitter)}
 			>Book me!</button></div>
 		
 		</div>

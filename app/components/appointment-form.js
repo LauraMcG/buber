@@ -6,6 +6,9 @@ class AppointmentForm extends Component {
     super(props);
 
 	    this.state = {
+
+	    		_babysitterID: this.props.babysitter._userId,
+
 				apptDateTime: '',
 				projectedDuration: '',
 				sitterAccepted: false,
@@ -21,13 +24,16 @@ class AppointmentForm extends Component {
   	onSubmit(event) {
   		event.preventDefault();
   		this.state.appointmentBooked = true;
+  		
 		helpers.postAppointment(
+			this.state._babysitterId,
 			this.state.apptDateTime, 
 			this.state.projectedDuration,
 			this.state.sitterAccepted,
 			this.state.appointmentBooked
 		)
 	}
+
 
 	handleChange(event) {
 		var newState = {};
@@ -41,14 +47,14 @@ class AppointmentForm extends Component {
 	    return (
 			<form>
 				<div className="form-group">
-					<label className="control-label" htmlFor="firstName">Appointment Date</label>
+					<label className="control-label" htmlFor="apptDateTime">Appointment Date</label>
 					<input className="form-control" name="apptDateTime" id="apptDateTime" value={this.state.apptDateTime}
 						onChange={this.handleChange}
 					/>
 				</div>
 
 				<div className="form-group">
-					<label className="control-label" htmlFor="firstName">Appointment Duration</label>
+					<label className="control-label" htmlFor="projectedDuration">Appointment Duration</label>
 					<input className="form-control" name="projectedDuration" id="projectedDuration" value={this.state.projectedDuration}
 						onChange={this.handleChange}
 					/>
