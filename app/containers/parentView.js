@@ -19,7 +19,6 @@ class ParentView extends Component {
 		super(props);
 
 		this.state = {
-			firstName: this.props.firstName,
 			babysitters: [],
 			selectedBabysitter: null,
 			appointments: [],
@@ -68,13 +67,13 @@ class ParentView extends Component {
 	render () {
 		return (
 			<div>
-				<h1>Welcome {this.state.firstName}</h1>
+				<h1>Welcome {this.props.firstName}</h1>
 				<AppointmentList 
 					appointments= {this.state.appointments}
 				/>
 				
 				<BabysitterDetail 
-					firstName={this.state.firstName}
+					firstName={this.props.firstName}
 					babysitter={this.state.selectedBabysitter}
 					appointment={this.state.appointments}
 					showAppointmentForm={this.state.showAppointmentForm}
