@@ -9,7 +9,7 @@ class AppointmentForm extends Component {
 				apptDateTime: '',
 				projectedDuration: '',
 				sitterAccepted: false,
-				appointmentBooked: true
+				appointmentBooked: false
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -20,6 +20,7 @@ class AppointmentForm extends Component {
 
   	onSubmit(event) {
   		event.preventDefault();
+  		this.state.appointmentBooked = true;
 		helpers.postAppointment(
 			this.state.apptDateTime, 
 			this.state.projectedDuration,
