@@ -39,6 +39,7 @@ router.get("/babysitters/:id", function(req, res) {
 
 // Route to add new babysitter to database
 router.post("/babysitters", function(req, res) {
+  console.log('BODY IS', req.body);
   var newBabysitter = new Babysitter(req.body);
 
   newBabysitter.save(function(err, doc) {

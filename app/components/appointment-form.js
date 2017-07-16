@@ -1,30 +1,65 @@
-import React from 'react';
+import React, { Component } from 'react';
+import helpers from '../utils/helpers';
 
-const AppointmentForm = (props) => {
+class AppointmentForm extends Component {
+	constructor(props) {
+    super(props);
+
+	    this.state = {
+				apptDateTime: '',
+				projectedDuration: '',
+				sitterAccepted: false,
+				appointmentBooked: false
+		};
+
+		this.handleChange = this.handleChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
+    	
+
+  	}
+
+  	onSubmit(event) {
+  		event.preventDefault();
+  		this.state.appointmentBooked = true;
+		helpers.postAppointment(
+			this.state.apptDateTime, 
+			this.state.projectedDuration,
+			this.state.sitterAccepted,
+			this.state.appointmentBooked
+		)
+	}
+
+	handleChange(event) {
+		var newState = {};
+    	newState[event.target.name] = event.target.value;
+    	this.setState(newState);
+	}
+  	
+
+ 	render() {
 	
-	
-	return (
-			<form onSubmit={props.handleSubmit}>
+	    return (
+			<form>
 				<div className="form-group">
-					<h4 className="">Time of appointment</h4>
-					<input type="text"
-						value={props.state.time}
-						className="form-control"
-						id="time"
-						onChange={props.handleChange}
-						required
+					<label className="control-label" htmlFor="firstName">Appointment Date</label>
+					<input className="form-control" name="apptDateTime" id="apptDateTime" value={this.state.apptDateTime}
+						onChange={this.handleChange}
 					/>
-
 				</div>
 
-				<div className="pull-right">
-					<button type="submit"
-					className="btn btn-danger">
-						<h4>Submit</h4>
-					</button>
+				<div className="form-group">
+					<label className="control-label" htmlFor="firstName">Appointment Duration</label>
+					<input className="form-control" name="projectedDuration" id="projectedDuration" value={this.state.projectedDuration}
+						onChange={this.handleChange}
+					/>
 				</div>
+
+				<button className="btn btn-primary" type="submit" id="appointment-submit" onClick={this.onSubmit}>Submit</button>
 			</form>
-	);
+		);
+  }
+
+	
 };
 
 export default AppointmentForm;

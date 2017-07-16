@@ -7,6 +7,9 @@ import helpers from '../utils/helpers';
 import BabysitterList from '../components/babysitter-list'
 import BabysitterDetail from '../components/babysitter-detail'
 import AppointmentForm from '../components/appointment-form'
+import AppointmentList from '../components/appointment-list'
+
+import SearchBar from './search-bar'
 
 //data
 
@@ -17,26 +20,70 @@ class ParentView extends Component {
 
 		this.state = {
 			babysitters: [],
-			selectedBabysitter: null
+			selectedBabysitter: null,
+			appointments: [],
+			showAppointmentForm: false,
+			babysitterID: null,
 		};
+		// this.handleAppointment=this.handleAppointment.bind(this);
 	}
+
+	// //callback for search
+	// babysitterSearch(term){
+	// 	this.setState({
+	// 		babysitters:babysitters,
+	// 		selectedBabysitter:babysitters[0]
+	// 	});
+	// }
+
+
+	// handleAppointment(babysitterID) {
+
+	// 	this.setState ({
+	// 		babysitterID: babysitterID,
+	// 		bookedAppointment: true
+	// 	});
+	// }
+	
+
 
 	componentDidMount() {
 		helpers.getAllBabysitters().then(function(babysitterData) {
-			this.setState({ babysitters: babysitterData.data});
-			console.log("babysitter results: ", babysitterData.data);
+			this.setState({ 
+				babysitters: babysitterData.data,
+			});
+		}.bind(this));
+
+		helpers.getAllAppointments().then(function(appointmentData) {
+			this.setState({ 
+				appointments: appointmentData.data
+			});
+			console.log("appointment results: ", appointmentData.data);
 		}.bind(this));
 	}
+
+	// <SearchBar onSearchTermChange = {babysitterSearch } />
 
 	render () {
 		return (
 			<div>
-				<BabysitterDetail babysitter={this.state.selectedBabysitter} 
+				<h1>Welcome {this.props.emergencyFirstName}</h1>
+				<AppointmentList 
+					appointments= {this.state.appointments}
+				/>
+				
+				<BabysitterDetail 
+					babysitter={this.state.selectedBabysitter}
+					appointment={this.state.appointments}
+					showAppointmentForm={this.state.showAppointmentForm}
+					handleAppointment={handleAppointment => this.setState({showAppointmentForm:true, babysitter: this.state.babysitter, appointment:this.state.appointment}) }
 				/>
 
 				<BabysitterList 
 					onBabysitterSelect = {selectedBabysitter => this.setState({selectedBabysitter}) }
-					babysitters = {this.state.babysitters} />
+					babysitters = {this.state.babysitters} 
+				/>
+
 			</div>
 		);
 	}
