@@ -7,6 +7,7 @@ var ParentProfile = React.createClass({
 	getInitialState: function(){
 		return {
 			_userID: this.props.id,
+			firstName: this.props.firstName,
 			address: '',
 			phoneNumber: '',
 			numChildren: '',
@@ -34,7 +35,8 @@ var ParentProfile = React.createClass({
 		if (this.state.submitted){
 			return(
 					<ParentView
-						_userID = {this.props.id}
+						_userID = {this.state.id}
+						firstName = {this.state.firstName}
 			      address = {this.state.address} 
 			      phoneNumber = {this.state.phoneNumber} 
 			      numChildren = {this.state.numChildren} 

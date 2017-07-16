@@ -36,9 +36,9 @@ var Register = React.createClass({
 	render: function(){
 		if (this.state.selectedRole == 1 && this.state.submitted === true){
 			console.log("parent");
-			return <ParentProfile id={this.state.id}/>;
+			return <ParentProfile id={this.state.id} firstName={this.state.firstName}/>;
 		} else if (this.state.selectedRole == 2 && this.state.submitted === true){
-			return <SitterProfile id={this.state.id}/>;
+			return <SitterProfile id={this.state.id} firstName={this.state.firstName}/>;
 		} else {
 			return (
 				<div className="row">
