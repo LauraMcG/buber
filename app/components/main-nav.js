@@ -1,6 +1,7 @@
 var React = require("react");
 
 var Link = require("react-router").Link;
+var Auth = require("../../server/passport/auth-token");
 
 var MainNav = React.createClass({
   render() {
@@ -30,6 +31,19 @@ var MainNav = React.createClass({
                           <ul className="nav navbar-nav">
                             <li><Link className="navlinks" to="/babysitters">Babysitters</Link></li>
                             <li><Link className="navlinks" to="/parents">Parents</Link></li>
+                            <li><Link className="navlinks" to="/parents">Parents</Link></li>
+                            <li><Link className="navlinks" to="/parents">Parents</Link></li>
+                            {Auth.isUserAuthenticated() ? (
+                                
+                                  <li><Link to="/logout">Log out</Link></li>
+                             
+                              ) : (
+                                
+                                  <li><Link to="/login">Log in</Link></li>
+                                  <li><Link to="/register">Register</Link></li>
+                                
+                            )}
+
                           </ul>
                       </div>
                   </div>
