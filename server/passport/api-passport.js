@@ -1,8 +1,8 @@
-const express = require('express');
+var express = require('express');
 
-const router = new express.Router();
+var router = new express.Router();
 
-router.get('/dashboard', (req, res) => {
+router.get('/', (req, res) => {
   res.status(200).json({
     message: "You're authorized to see this secret message."
   });
