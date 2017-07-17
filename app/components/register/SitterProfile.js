@@ -6,7 +6,6 @@ var Link = require("react-router").Link;
 var SitterProfile = React.createClass({
 	getInitialState: function(){
 		return {
-			_userID: this.props.id,
 	    birthdayMonth: '',
 	    birthdayDay: '',
 	    birthdayYear: '',
@@ -28,7 +27,7 @@ var SitterProfile = React.createClass({
 	onSubmit: function(e){
 		e.preventDefault();
 		console.log("id before call to database " + this.props.id);
-		helpers.postSitter(this.state._userID, this.state.birthdayMonth, this.state.birthdayDay, this.state.birthdayYear, this.state.gender, this.state.isAvailable, this.state.phoneNumber, this.state.bio, this.state.certifications, this.state.ratePerHour).then(function(data){
+		helpers.postSitter(this.props.id, this.state.birthdayMonth, this.state.birthdayDay, this.state.birthdayYear, this.state.gender, this.state.isAvailable, this.state.phoneNumber, this.state.bio, this.state.certifications, this.state.ratePerHour).then(function(data){
 				this.setState({'submitted': true});
 		}.bind(this));
 	},
@@ -37,6 +36,7 @@ var SitterProfile = React.createClass({
 			return (
 				<BabysitterView 
 					_userID = {this.props.id}
+					firstName = {this.props.firstName}
 					birthdayMonth = {this.state.birthdayMonth}
 		      birthdayDay = {this.state.birthdayDay}
 		      birthdayYear = {this.state.birthdayYear}
