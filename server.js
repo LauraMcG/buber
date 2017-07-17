@@ -8,7 +8,7 @@ var Parent = require("./server/models/Parent");
 var Babysitter = require("./server/models/Babysitter");
 var Appointment = require("./server/models/Appointment");
 
-var passport = require('./app/config/passport.js');
+var passport = require('passport');
 
 //Express and port set-up
 var app = express();
@@ -16,7 +16,7 @@ var PORT = process.env.PORT || 8080;
 
 // set up express to use passport
 // app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true}));
-// app.use(passport.initialize());
+app.use(passport.initialize());
 // app.use(passport.session());
 
 // Body Parser and Logger Config
