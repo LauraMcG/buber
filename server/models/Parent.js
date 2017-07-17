@@ -51,7 +51,8 @@ var ParentSchema = new Schema({
     type: String,
     unique: false,
     required: true 
-  },  wifiDomain: {
+  },  
+  wifiDomain: {
     type: String,
     unique: false,
     required: false 

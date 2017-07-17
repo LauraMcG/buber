@@ -29,9 +29,21 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 // serve static files from public directory
 app.use(express.static('./public'));
 
+//Passport Dependencies
+var localSignupStrategy = require('./server/passport/registry-strategy');
+var localLoginStrategy = require('./server/passport/login-strategy');
+passport.use('registry-strategy', localSignupStrategy);
+passport.use('login-strategy', localLoginStrategy);
+
 //Passport middleware
-// var authCheckMiddleware = require('./server/passport/auth-passport.js');
-// app.use('/api', authCheckMiddleware);
+var authCheckMiddleware = require('./server/passport/auth-passport.js');
+app.use('/api', authCheckMiddleware);
+
+//Passport Routes
+var authRoutes = require('./server/passport/authenticate-passport');
+var apiRoutes = require('./server/passport/api-passport');
+app.use('/auth', authRoutes);
+app.use('/api', apiRoutes);
 
 // adding userRoute
 var userRoutes = require("./server/routes/userRoutes");
