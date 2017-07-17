@@ -3,7 +3,7 @@ import helpers from '../utils/helpers';
 
 class AppointmentForm extends Component {
 	constructor(props) {
-    super(props);
+    	super(props);
 
 	    this.state = {
 
@@ -23,14 +23,16 @@ class AppointmentForm extends Component {
 
   	onSubmit(event) {
   		event.preventDefault();
-  		this.state.appointmentBooked = true;
   		
+  		this.setState({
+  			appointmentBooked: true
+  		})
 		helpers.postAppointment(
 			this.state._babysitterId,
 			this.state.apptDateTime, 
 			this.state.projectedDuration,
 			this.state.sitterAccepted,
-			this.state.appointmentBooked
+			this.state.appointmentBooked = true
 		)
 	}
 
@@ -43,26 +45,33 @@ class AppointmentForm extends Component {
   	
 
  	render() {
+
+ 		if(this.state.appointmentBooked) {
+ 			return <div>Thanks for booking</div>
+ 		}
 	
-	    return (
-			<form>
-				<div className="form-group">
-					<label className="control-label" htmlFor="apptDateTime">Appointment Date</label>
-					<input className="form-control" name="apptDateTime" id="apptDateTime" value={this.state.apptDateTime}
-						onChange={this.handleChange}
-					/>
-				</div>
+		    return (
+				<form>
+					<div className="form-group">
+						<label className="control-label" htmlFor="apptDateTime">Appointment Date</label>
+						<input className="form-control" name="apptDateTime" id="apptDateTime" value={this.state.apptDateTime}
+							onChange={this.handleChange}
+						/>
+					</div>
 
-				<div className="form-group">
-					<label className="control-label" htmlFor="projectedDuration">Appointment Duration</label>
-					<input className="form-control" name="projectedDuration" id="projectedDuration" value={this.state.projectedDuration}
-						onChange={this.handleChange}
-					/>
-				</div>
+					<div className="form-group">
+						<label className="control-label" htmlFor="projectedDuration">Appointment Duration</label>
+						<input className="form-control" name="projectedDuration" id="projectedDuration" value={this.state.projectedDuration}
+							onChange={this.handleChange}
+						/>
+					</div>
 
-				<button className="btn btn-primary" type="submit" id="appointment-submit" onClick={this.onSubmit}>Submit</button>
-			</form>
-		);
+					<button className="btn btn-primary" type="submit" id="appointment-submit" onClick={this.onSubmit}>Submit</button>
+				</form>
+			);
+		
+
+		
   }
 
 	
