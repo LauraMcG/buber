@@ -2,7 +2,7 @@ import React from 'react';
 import AppointmentForm from './appointment-form';
 
 
-const BabysitterDetail = ({babysitter, appointment, showAppointmentForm, handleAppointment}) => {
+const BabysitterDetail = ({babysitter, appointment, showAppointmentForm, handleAppointment, handleAppointmentUpdate}) => {
 
 
 
@@ -14,6 +14,7 @@ const BabysitterDetail = ({babysitter, appointment, showAppointmentForm, handleA
 	const appointmentForm = (showAppointmentForm ? <AppointmentForm 
 			babysitter={babysitter}
 			appointment={appointment}
+			handleAppointmentUpdate={handleAppointmentUpdate}
 		/> : null);
 
 	return (
