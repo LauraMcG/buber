@@ -1,4 +1,4 @@
-// Inclue the React library
+ // Inclue the React library
 var React = require("react");
 
 // Include the react-router module
@@ -25,29 +25,71 @@ var SitterProfile = require("../components/register/SitterProfile");
 var ParentProfile = require("../components/register/ParentProfile");
 var BabysitterView = require("../containers/babysitterView");
 var ParentView = require("../containers/parentView");
+var Test = require("../containers/noRoleTest");
+var Auth = require("../../server/passport/auth-token");
 
 // Export the Routes
-module.exports = (
-  // High level component is the Router component.
-  <Router history={browserHistory}>
-    <Route path="/" component={Home}>
+const routes = {
+  // base component (wrapper for the whole application).
+  component: Home,
+  childRoutes: [
+  //For now, all authenticated users will be directed to the parent view
+    {
+      path: '/',
+      getComponent: (location, callback) => {
+        if (Auth.isUserAuthenticated()) {
+          callback(null, Test);
+        } else {
+          callback(null, Register);
+        }
+      }
+    },
+
+    {
+      path: '/login',
+      component: Login
+    },
+
+    {
+      path: '/register',
+      component: Register
+    },
+
+    {
+      path: '/logout',
+      onEnter: (nextState, replace) => {
+        Auth.deauthenticateUser();
+
+        // change the current URL to /
+        replace('/');
+      }
+    }
+
+  ]
+};
+
+export default routes;
+// module.exports = (
+//   // High level component is the Router component.
+//   <Router history={browserHistory}>
+//     <Route path="/" component={Home}>
 
 
-      {/* If user selects Register or Login show the appropriate component */}
-      <Route path="Register" component={Register} />
-      <Route path="Login" component={Login} />
+//       {/* If user selects Register or Login show the appropriate component */}
+//       <Route path="Register" component={Register} />
+//       <Route path="Login" component={Login} />
 
-      <Route path="babysitters" component={SitterProfile} />
-      <Route path="parents" component={ParentProfile} />
+//       <Route path="babysitters" component={SitterProfile} />
+//       <Route path="parents" component={ParentProfile} />
 
-      <Route path="babysitters" component={BabysitterView} />
-      <Route path="parents" component={ParentView} />
+//       <Route path="babysitters" component={BabysitterView} />
+//       <Route path="parents" component={ParentView} />
 
 
-      {/* If user selects any other path... we get the Home Route */}
+//       {/* If user selects any other path... we get the Home Route */}
       
-      <IndexRoute component={Register} />
+//       <IndexRoute component={Register} />
 
-    </Route>
-  </Router>
-);
+//     </Route>
+//   </Router>
+// );
