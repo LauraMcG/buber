@@ -3,7 +3,7 @@ import Auth from '../../server/passport/auth-token';
 import LoginForm from '../components/login';
 
 
-class LoginPage extends React.Component {
+class Login extends React.Component {
 
   /**
    * Class constructor.
@@ -114,11 +114,11 @@ class LoginPage extends React.Component {
 
 }
 
-LoginPage.contextTypes = {
+Login.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default LoginPage;
+export default Login;
 
 
 // var React = require("react");
