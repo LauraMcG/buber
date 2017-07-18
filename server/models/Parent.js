@@ -22,13 +22,13 @@ var ParentSchema = new Schema({
   numChildren: {
     type: Number,
     unique: false,
-    required: true
+    // required: true
   },
   emergencyFirstName: {
     type: String,
     trim: true,
-    unique: false,
-    required: true
+    // unique: false,
+    // required: true
   },
   emergencyLastName: {
     type: String,
@@ -49,8 +49,8 @@ var ParentSchema = new Schema({
   },
   doctorPhoneNumber: {
     type: String,
-    unique: false,
-    required: true 
+    // unique: false,
+    // required: true 
   },  
   wifiDomain: {
     type: String,

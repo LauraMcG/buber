@@ -7,19 +7,19 @@ var UserSchema = new Schema({
     type: String,
     trim: true,
     unique: false,
-    required: true, 
+    // required: true
   },
   lastName: {
     type: String,
     trim: true,
     unique: false,
-    required: true, 
+    // required: true 
   }, 
   email: {
     type: String,
     trim: true
     // unique: false,
-    // required: false, 
+    // required: false
   }, 
   password: {
     type: String,
@@ -29,7 +29,7 @@ var UserSchema = new Schema({
   },
   role: {
   	type: Number,
-  	required: true
+  	// required: true
   }
 });
 
