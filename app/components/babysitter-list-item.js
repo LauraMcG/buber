@@ -6,7 +6,8 @@ const BabysitterListItem = ({babysitter, onBabysitterSelect}) => {
 			<li key={babysitter._id}
 			onClick={() => onBabysitterSelect(babysitter)}
 			>
-			{babysitter.phoneNumber}
+			{babysitter._userID.firstName}
+
 		</li>
 	);
 };

@@ -49,6 +49,10 @@ app.use("/api", babysitterRoutes);
 var appointmentRoutes = require("./server/routes/appointmentRoutes");
 app.use("/api", appointmentRoutes);
 
+// adding userRoute
+var userRoutes = require("./server/routes/userRoutes");
+app.use("/api", userRoutes);
+
 
 //fallback route
 app.get('*', function(req,res){

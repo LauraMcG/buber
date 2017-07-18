@@ -33,9 +33,6 @@ class BabysitterView extends Component {
             console.log("all singular babysitter appointments: " , appointmentData.data);
         }.bind(this));
     }
-
-    //Another helper to bring here specific babysitter data here and pass the state to the toogle component
-
     //Show Toggle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
         return (
@@ -43,11 +40,11 @@ class BabysitterView extends Component {
                 <AppointmentList 
                     appointments = {this.state.appointments}/>
                 <AvailabilityToggle handleAvailabilityUpdate = {this.handleAvailabilityUpdate} />
+
             </div>
         );
     }
 }
-module.exports = BabysitterView;
 
 
 // var BabysitterView = React.createClass({

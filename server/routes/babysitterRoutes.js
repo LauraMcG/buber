@@ -9,6 +9,7 @@ var Babysitter = require("../models/Babysitter");
 router.get("/babysitters", function(req, res) {
 
   Babysitter.find({})
+    .populate("_userID")
     .exec(function(err, doc) {
 
       if (err) {
@@ -39,6 +40,7 @@ router.get("/babysitters/:id", function(req, res) {
 
 // Route to add new babysitter to database
 router.post("/babysitters", function(req, res) {
+  console.log('BODY IS', req.body);
   var newBabysitter = new Babysitter(req.body);
 
   newBabysitter.save(function(err, doc) {
