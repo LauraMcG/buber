@@ -56,4 +56,4 @@ class BabysitterView extends Component {
 //      )
 //  }
 // })
-// module.exports = BabysitterView;
+module.exports = BabysitterView;
