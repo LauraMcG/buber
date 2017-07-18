@@ -19,7 +19,7 @@ var SitterProfile = React.createClass({
 	    certifications: '', 
 	    ratePerHour: '',
 	    numFavs: '',
-			submitted: false
+		submitted: false
 		};
 	},
 	handleChange: function(event){
