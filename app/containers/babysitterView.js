@@ -22,7 +22,19 @@ class BabysitterView extends Component {
         }.bind(this));
     }
 
+
     //Another helper to bring here specific babysitter data here and pass the state to the toogle component
+
+var BabysitterView = React.createClass({
+	render: function(){
+		
+		return (
+			<div><h1>Babysitter View</h1></div>
+			
+		)
+	}
+})
+
 
     //Show Toogle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
