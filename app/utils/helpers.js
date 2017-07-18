@@ -78,8 +78,8 @@ var helpers = {
       };
     return axios.post("/api/appointments", newAppt)
       .then(function(response) {
-        console.log("axios results", response.data._id);
-        return response.data._id;
+        console.log("axios results", response.data);
+        return response.data;
       });
   }
 

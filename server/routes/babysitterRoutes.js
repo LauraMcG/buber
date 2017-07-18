@@ -9,6 +9,7 @@ var Babysitter = require("../models/Babysitter");
 router.get("/babysitters", function(req, res) {
 
   Babysitter.find({})
+    .populate("_userID")
     .exec(function(err, doc) {
 
       if (err) {

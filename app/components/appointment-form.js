@@ -26,7 +26,9 @@ class AppointmentForm extends Component {
 			this.state.projectedDuration,
 			this.state.sitterAccepted,
 			this.state.appointmentBooked
-		)
+		).then((data) => {
+			this.props.handleAppointmentUpdate(data)
+		})
 	}
 
 	handleChange(event) {

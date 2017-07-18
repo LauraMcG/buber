@@ -11,6 +11,7 @@ import AppointmentList from '../components/appointment-list'
 
 import SearchBar from './search-bar'
 
+
 //data
 
 class ParentView extends Component {
@@ -26,6 +27,7 @@ class ParentView extends Component {
 			babysitterID: null,
 		};
 		// this.handleAppointment=this.handleAppointment.bind(this);
+		this.handleAppointmentUpdate = this.handleAppointmentUpdate.bind(this)
 	}
 
 	// //callback for search
@@ -37,13 +39,15 @@ class ParentView extends Component {
 	// }
 
 
-	// handleAppointment(babysitterID) {
-
-	// 	this.setState ({
-	// 		babysitterID: babysitterID,
-	// 		bookedAppointment: true
-	// 	});
-	// }
+	handleAppointmentUpdate(appointment) {
+		console.log("handleAppointmentUpdate", appointment)
+		const newAppointments = this.state.appointments.concat([appointment]);
+		this.setState ({
+			appointments: newAppointments,
+			showAppointmentForm: false,
+			selectedBabysitter: null
+		});
+	}
 	
 
 
@@ -67,6 +71,8 @@ class ParentView extends Component {
 	render () {
 		return (
 			<div>
+				
+				
 				<h1>Welcome {this.props.firstName}</h1>
 				<AppointmentList 
 					appointments= {this.state.appointments}
@@ -77,7 +83,8 @@ class ParentView extends Component {
 					babysitter={this.state.selectedBabysitter}
 					appointment={this.state.appointments}
 					showAppointmentForm={this.state.showAppointmentForm}
-					handleAppointment={handleAppointment => this.setState({showAppointmentForm:true, babysitter: this.state.babysitter, appointment:this.state.appointment}) }
+					handleAppointment={() => this.setState({showAppointmentForm:true, babysitter: this.state.babysitter, appointment:this.state.appointment}) }
+					handleAppointmentUpdate={this.handleAppointmentUpdate}
 				/>
 
 				<BabysitterList 
