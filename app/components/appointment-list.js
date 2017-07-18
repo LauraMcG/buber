@@ -7,9 +7,6 @@ import AppointmentListItems from './appointment-list-items';
 
 const AppointmentList = (props) => {
 
-	
-	console.log("props: " + props);
-
 	//if no upcoming appointments are received,
 	//display message that reflects this in the component.
 

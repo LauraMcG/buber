@@ -10,9 +10,10 @@ class Toogle extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  const handleClick = () => {
+  handleClick() => {
     this.setState({active = !this.state.active});
   }
+
   componentDidMount () {
     
   }
