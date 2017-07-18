@@ -1,14 +1,62 @@
 import React from 'react';
 
+
 const BabysitterListItem = ({babysitter, onBabysitterSelect}) => {
 
 	return (
-			<li key={babysitter._id}
-			onClick={() => onBabysitterSelect(babysitter)}
-			>
-			{babysitter._userID.firstName}
 
-		</li>
+		
+			<div>
+			      <li 
+			      	key={babysitter._id}
+			      	onClick={() => onBabysitterSelect(babysitter)}
+			      	className="col-sm-3 col-md-2 text-center sitterListItem favSitter"
+
+			      >
+
+			      <div className="listContainer">
+				       <h2 className="sitterName">{babysitter._userID.firstName} {babysitter._userID.lastName}</h2> 
+
+				       <div className="hexa">
+				          <div className="hex1">
+				            <div className="hex2">
+				              <img src='img/babysitterImg1.jpg' alt="Smiley face" width="130" height="130" />
+				            </div>
+				          </div>
+				        </div>
+				       <p>Bio: {babysitter.bio}</p>
+				       <br />
+				       
+				       <h2><strong>${babysitter.ratePerHour} / Hour</strong></h2>
+				       <br />
+				  	</div>
+
+			       <button type="button" className="btn btn-default">Book</button>
+
+			      </li>
+
+			</div>
+			        
+				            
+
+				    
+				    
+				    
+				    
+				        
+				    
+
+
+
+
+
+
+		// <li key={babysitter._id}
+		// 	onClick={() => onBabysitterSelect(babysitter)}
+		// 	>
+		// 	{babysitter._userID.firstName}
+
+		// </li>
 	);
 };
 
