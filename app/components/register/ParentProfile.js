@@ -33,8 +33,8 @@ var ParentProfile = React.createClass({
 		if (this.state.submitted){
 			return(
 					<ParentView
-						_userID = {this.props.id}
-						firstName = {this.props.firstName}
+				  userID = {this.props.id}
+				  firstName = {this.props.firstName}
 			      address = {this.state.address} 
 			      phoneNumber = {this.state.phoneNumber} 
 			      numChildren = {this.state.numChildren} 

@@ -78,7 +78,8 @@ class ParentView extends Component {
 					appointments= {this.state.appointments}
 				/>
 				
-				<BabysitterDetail 
+				<BabysitterDetail
+					parentID = {this.props.userID}
 					firstName={this.props.firstName}
 					babysitter={this.state.selectedBabysitter}
 					appointment={this.state.appointments}
