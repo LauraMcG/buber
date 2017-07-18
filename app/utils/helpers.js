@@ -81,9 +81,21 @@ var helpers = {
         console.log("axios results", response.data);
         return response.data;
       });
+  },
+  ///set the babysitter's availability per the toggle request
+  putBabysitterAvailability: function (userID, availability) {
+    var newAvailability = {
+      isAvailable: availability
+    };
+
+    var putURL = "/api/babysitters/" + userID;
+
+    return axios.put(putURL, newAvailability).then(function(response) {
+      return response.data;
+    });
   }
 
-}
+};
 
 
 module.exports = helpers;
