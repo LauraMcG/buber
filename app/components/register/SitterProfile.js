@@ -22,11 +22,13 @@ var SitterProfile = React.createClass({
 		submitted: false
 		};
 	},
+
 	handleChange: function(event){
 		var newState = {};
-    newState[event.target.name] = event.target.value;
-    this.setState(newState);
+    	newState[event.target.name] = event.target.value;
+    	this.setState(newState);
 	},
+
 	onSubmit: function(e){
 		e.preventDefault();
 		console.log("id before call to database " + this.props.id);
@@ -41,15 +43,15 @@ var SitterProfile = React.createClass({
 					_userID = {this.props.id}
 					firstName = {this.props.firstName}
 					birthdayMonth = {this.state.birthdayMonth}
-		      birthdayDay = {this.state.birthdayDay}
-		      birthdayYear = {this.state.birthdayYear}
-		      gender = {this.state.gender}
-		      isAvailable = {this.state.isAvailable}
-		      phoneNumber = {this.state.phoneNumber}
-		      bio = {this.state.bio}
-		      certifications = {this.state.certifications} 
-		      ratePerHour = {this.state.ratePerHour}
-		      numFavs = {this.state.numFavs}
+				    birthdayDay = {this.state.birthdayDay}
+				    birthdayYear = {this.state.birthdayYear}
+				    gender = {this.state.gender}
+				    isAvailable = {this.state.isAvailable}
+				    phoneNumber = {this.state.phoneNumber}
+				    bio = {this.state.bio}
+				    certifications = {this.state.certifications} 
+				    ratePerHour = {this.state.ratePerHour}
+				    numFavs = {this.state.numFavs}
 				/>
 			);
 		} 

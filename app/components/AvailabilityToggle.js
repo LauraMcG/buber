@@ -15,23 +15,23 @@ class AvailabilityToggle extends Component {
   handleClick (event) {
     event.preventDefault();
     var newAvailability = !this.state.isAvailable;
-    // console.log("this.state.isAvailable: " + this.state.isAvailable);
+    console.log("this.state.isAvailable: " + this.state.isAvailable);
 
     this.setState({isAvailable: newAvailability});
-    // console.log("newAvailability: " + newAvailability);
+    console.log("newAvailability: " + newAvailability);
 
-    helpers.putBabysitterAvailability(this.props._UserID, newAvailability)
+    helpers.putBabysitterAvailability(this.props.id, newAvailability)
     .then((data) => {
       this.props.handleAvailabilityUpdate(data.isAvailable);
 
-      // console.log("availability after call:", data.isAvailable);
+      console.log("availability after call:", data.isAvailable);
 
     });
 
   }
 
   componentDidMount () {
-    
+    console.log("this.props.id", this.props.id);
   }
 
   render() {      

@@ -16,12 +16,14 @@ class BabysitterView extends Component {
     }
 
     handleAvailabilityUpdate(availability) {
-        // console.log("handleAvailabilityUpdate before: " , availability);
+        console.log("handleAvailabilityUpdate before: " , availability);
         const  newAvailability = availability;
 
         this.setState ({
             availability: newAvailability
         });
+
+        console.log("handleAvailabilityUpdate after: " , availability);
     }
 
     componentDidMount () {
@@ -32,6 +34,8 @@ class BabysitterView extends Component {
             });
             console.log("all singular babysitter appointments: " , appointmentData.data);
         }.bind(this));
+
+        console.log("this.props.id", this.props.id);
     }
     //Show Toggle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
@@ -56,4 +60,6 @@ class BabysitterView extends Component {
 //      )
 //  }
 // })
-// module.exports = BabysitterView;
+
+
+module.exports = BabysitterView;
