@@ -31,12 +31,17 @@ const AppointmentList = (props) => {
 	});
 
 	return (
-		<div className="AppointmentList">
-		<h3>Upcoming Appointments</h3>
-		<ul className="col-md-4 list-group">
-			{AppointmentItems}
-		</ul>
+		<div>
+			<div className="appointmentList row">
+				<div className="col-md-12"/>
+
+					<h1>Pending Appointments</h1>
+					<ul className="appointmentListItems">
+						{AppointmentItems}
+					</ul>
+				</div>
 		</div>
+
 	);
 };
 
