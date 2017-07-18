@@ -11,7 +11,8 @@ const BabysitterDetail = ({babysitter, appointment, showAppointmentForm, handleA
 		return <div>Select a babysitter to view profile.</div>;
 	}
 
-	const appointmentForm = (showAppointmentForm ? <AppointmentForm 
+	const appointmentForm = (showAppointmentForm ? <AppointmentForm
+			parentID = {this.props.parentID} 
 			babysitter={babysitter}
 			appointment={appointment}
 			handleAppointmentUpdate={handleAppointmentUpdate}

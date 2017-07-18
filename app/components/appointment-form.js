@@ -8,7 +8,7 @@ class AppointmentForm extends Component {
 	    this.state = {
 				apptDateTime: '',
 				projectedDuration: '',
-				sitterAccepted: false,
+				sitterAccepted: false, 
 				appointmentBooked: false
 		};
 
@@ -22,6 +22,8 @@ class AppointmentForm extends Component {
   		event.preventDefault();
   		this.state.appointmentBooked = true;
 		helpers.postAppointment(
+			this.props.parentID,
+			this.props.babysitterID,
 			this.state.apptDateTime, 
 			this.state.projectedDuration,
 			this.state.sitterAccepted,
