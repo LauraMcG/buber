@@ -8,6 +8,7 @@ class AvailabilityToggle extends Component {
     this.state = {
         isAvailable: true
     };
+
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -19,19 +20,20 @@ class AvailabilityToggle extends Component {
 
     this.setState({isAvailable: newAvailability});
     console.log("newAvailability: " + newAvailability);
+    console.log(this.props._userID);
 
-    helpers.putBabysitterAvailability(this.props.id, newAvailability)
+    helpers.putBabysitterAvailability(this.props._userID, newAvailability)
     .then((data) => {
+
+      // console.log(data);
       this.props.handleAvailabilityUpdate(data.isAvailable);
 
-      console.log("availability after call:", data.isAvailable);
-
-    });
-
+      console.log("availability after axios:", data.isAvailable);
+    });  
   }
 
   componentDidMount () {
-    console.log("this.props.id", this.props.id);
+    // console.log("this.props.id", this.props._userID);
   }
 
   render() {      

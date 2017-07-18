@@ -10,7 +10,7 @@ class BabysitterView extends Component {
         super(props);
         this.state = {
             appointments: [] ,
-            availability: null,
+            availability: true,
         };
         this.handleAvailabilityUpdate=this.handleAvailabilityUpdate.bind(this);
     }
@@ -35,7 +35,7 @@ class BabysitterView extends Component {
             console.log("all singular babysitter appointments: " , appointmentData.data);
         }.bind(this));
 
-        console.log("this.props.id", this.props.id);
+        console.log("this.props._userID", this.props._userID);
     }
     //Show Toggle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
@@ -43,7 +43,10 @@ class BabysitterView extends Component {
             <div> <h1>Hello!</h1>
                 <AppointmentList 
                     appointments = {this.state.appointments}/>
-                <AvailabilityToggle handleAvailabilityUpdate = {this.handleAvailabilityUpdate} />
+                <AvailabilityToggle 
+                    _userID = {this.props._userID}
+                    handleAvailabilityUpdate = {this.handleAvailabilityUpdate} 
+                />
 
             </div>
         );
