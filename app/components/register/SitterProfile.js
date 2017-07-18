@@ -1,6 +1,9 @@
 var React = require("react");
 var helpers = require("../../utils/helpers");
+
+var ParentView = require("../../containers/parentView");
 var BabysitterView = require("../../containers/babysitterView");
+
 var Link = require("react-router").Link;
 
 var SitterProfile = React.createClass({
