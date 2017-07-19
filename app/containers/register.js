@@ -58,7 +58,7 @@ var Register = React.createClass({
 
 					</div> 
 
-					<div className="row">
+					<div className="row registerRow">
 
 
 					    <div className="col-md-12">

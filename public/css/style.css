@@ -294,6 +294,10 @@ li.appointmentListItem {
 
 /*register*/
 
+.registerRow{
+	padding-bottom: 60px;
+}
+
 h3.registerHeader {
 	padding-top: 20px;
 	padding-bottom: 20px;
