@@ -52,14 +52,14 @@ class BabysitterView extends Component {
     <div className="row pink">
         <div className="col-md-12 babysitterHeroContent">
           <div className="col-md-4">  
-            <h2>How we <br/> redefined <br/> babysitting</h2>
+            <h2>Buber <br/> redefines <br/> babysitting</h2>
           </div>
 
            <div className="col-md-8 sideBorder">
 
             <div className="row">
               <div className="col-sm-6">
-                <h3>Reach Your Neighborhoods</h3>
+                <h3>Reach Your Neighbors</h3>
                 <p>Buber puts you in touch with families in your community. You reach all the kids not just the ones you know.</p>
               </div>
 

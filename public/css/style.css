@@ -336,3 +336,9 @@ h3.parentRegisterHero, h3.sitterRegisterHero{
 	padding-left: 40px;
 	float:right;
 }
+
+.availableRow {
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:3px;
+}

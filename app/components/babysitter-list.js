@@ -15,7 +15,7 @@ const BabysitterList = (props) => {
 	return (
 		<div className="row sitterRow">
 			<div className="col-md-12 col-xs-12">
-		    	<h2>Our Babysitters</h2>
+		    	<h2>These Babysitters are available for future appointments</h2>
 		    	<ul>
 		    		{babysitterItems}
 		    	</ul>
