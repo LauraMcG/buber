@@ -8,6 +8,7 @@ import BabysitterList from '../components/babysitter-list'
 import BabysitterDetail from '../components/babysitter-detail'
 import AppointmentForm from '../components/appointment-form'
 import AppointmentList from '../components/appointment-list'
+import AvailableSitterList from '../components/availSitterList'
 
 import SearchBar from './search-bar'
 
@@ -25,6 +26,7 @@ class ParentView extends Component {
 			appointments: [],
 			showAppointmentForm: false,
 			babysitterID: null,
+
 		};
 		// this.handleAppointment=this.handleAppointment.bind(this);
 		this.handleAppointmentUpdate = this.handleAppointmentUpdate.bind(this)
@@ -52,7 +54,13 @@ class ParentView extends Component {
 
 
 	componentDidMount() {
-		helpers.getAvailableBabysitters().then(function(babysitterData) {
+		// helpers.getAvailableBabysitters().then(function(babysitterData) {
+		// 	this.setState({ 
+		// 		babysitters: babysitterData.data,
+		// 	});
+		// }.bind(this));
+
+		helpers.getAllBabysitters().then(function(babysitterData) {
 			this.setState({ 
 				babysitters: babysitterData.data,
 			});
@@ -113,7 +121,7 @@ class ParentView extends Component {
 					appointments= {this.state.appointments}
 					role="parent"
 				/>
-				
+
 				<BabysitterDetail
 					parentID = {this.props.userID}
 					firstName={this.props.firstName}
@@ -124,10 +132,17 @@ class ParentView extends Component {
 					handleAppointmentUpdate={this.handleAppointmentUpdate}
 				/>
 
+				<AvailableSitterList 
+					onBabysitterSelect = {selectedBabysitter => this.setState({selectedBabysitter}) }
+					babysitters = {this.state.babysitters} 
+				/>
+
 				<BabysitterList 
 					onBabysitterSelect = {selectedBabysitter => this.setState({selectedBabysitter}) }
 					babysitters = {this.state.babysitters} 
 				/>
+
+				
 
 			</div>
 		);

@@ -9,7 +9,7 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 		return (
 			<div className="row sitterDetail">
 				<div className="col-md-12">
-					<h1>Let's find a babysitter...</h1>
+					<h3>Let's find the perfect babysitter...</h3>
 				</div>
 			</div>
 		);
