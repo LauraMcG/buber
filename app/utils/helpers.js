@@ -4,7 +4,7 @@ var querystring = require("querystring");
 var helpers = {
 	postUser: function(firstName, lastName, email, password, role) {
     var newUser = { 
-      // _id: "596e973c25b7886642f9ec5f",
+      //_id: "596a6563ed68ca50a286166a",
     	firstName: firstName,
     	lastName: lastName,
     	email: email,

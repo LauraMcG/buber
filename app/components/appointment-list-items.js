@@ -40,27 +40,32 @@ class AppointmentListItem extends Component {
 
 	handleRejection(){
 		alert ("appointment rejected");
+		this.setState({rejected:true});
 	}
 
 	render(){
 		let acceptBttn = null;
 		let rejectBttn = null;
 
-		if (this.props.role ==='babysitter'){
+		if (this.props.role ==='babysitter' && this.state.sitterAccepted === false){
 			acceptBttn = <AcceptButton onClick={this.handleAcceptance}/> 
 			rejectBttn = <RejectButton onClick={this.handleRejection}/>
 		} 
 		return (
 			<li key={this.props.appointment._id}
-					className="col-sm-2 appointmentListItem">
+					className="col-sm-2 appointmentListItem" style={
+        this.state.rejected ? 'display: none' : ''
+      }>
 
 					<div className = "notAccepted"><h2><strong>Pending...</strong></h2></div>
 					<p>Day: {this.props.appointment.apptDateTime}</p>
 					<br/>
 					<p>Duration: {this.props.appointment.projectedDuration}</p>
 					<br/>
+				
 					{acceptBttn}
 					{rejectBttn}
+
 
 			</li>
 		);

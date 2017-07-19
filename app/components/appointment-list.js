@@ -1,7 +1,3 @@
-//this component lists all of the appointments for the user 
-//at the time of this writing, this component is designed with the parent view in mind. 
-//in a perfect world, we'll be able to use this for both a parent or a babysitter.
-
 import React from 'react';
 import AppointmentListItems from './appointment-list-items';
 
