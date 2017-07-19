@@ -9,7 +9,7 @@ const AppointmentListItem = ({appointment}) => {
 				<div className = "notAccepted"><h2><strong>Pending...</strong></h2></div>
 				<p>Day: {appointment.apptDateTime}</p>
 				<br/>
-				<p>Duration: {appointment.projectedDuration}</p>
+				<p>Duration: {appointment.projectedDuration} hours</p>
 
 
 		</li>

@@ -58,7 +58,7 @@ class ParentView extends Component {
 			});
 		}.bind(this));
 
-		helpers.getAllAppointments().then(function(appointmentData) {
+		helpers.getParentAppointments(this.props.userID).then(function(appointmentData) {
 			this.setState({ 
 				appointments: appointmentData.data
 			});

@@ -11,16 +11,16 @@ const AppointmentList = (props) => {
 	//display message that reflects this in the component.
 
 	//vv this isn't working yet.
-	// if (props.length == undefined ) {
-	// 	return (
-	// 		<div className="AppointmentList">
-	// 			<h3>Upcoming Appointments</h3>
-	// 			<p>You have no upcoming appointments. </p>
-	// 		</div>
-	// 		);
-	// };
+	if (props.appointments.length === undefined || props.appointments.length === 0 || props.appointments.length === null) {
+		return (
+			<div className="AppointmentList">
+				<h3>Upcoming Appointments</h3>
+				<p>You have no upcoming appointments. </p>
+			</div>
+			);
+	};
 
-
+	console.log(props);
 	const AppointmentItems = props.appointments.map((appointment) => {
 		return (
 				<AppointmentListItems 

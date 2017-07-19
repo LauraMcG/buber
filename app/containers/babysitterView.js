@@ -28,7 +28,7 @@ class BabysitterView extends Component {
 
     componentDidMount () {
         // Helper to grab all appointments for specific babysiter - i.e. search on babysitter ID
-        helpers.getAllAppointments().then(function(appointmentData){
+        helpers.getAllSitterAppointments(this.props._userID).then(function(appointmentData){
             this.setState({
                 appointments: appointmentData.data,
             });

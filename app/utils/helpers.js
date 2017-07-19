@@ -70,8 +70,18 @@ var helpers = {
       });
   }, 
     //Get all appointments in which a specific babysitter was requested
-  getAllSitterAppointments: function() {
-    return axios.get("/api/appointments/babysitter/:id")
+  getAllSitterAppointments: function(babysitterID) {
+    var URL = "/api/babysitters/" + babysitterID;
+    return axios.get(URL)
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
+  },
+
+  getAllParentAppointments: function(parentID) {
+    var URL = "/api/babysitters/" + parentID;
+    return axios.get(URL)
       .then(function(results) {
         console.log("axios results", results);
         return results;
