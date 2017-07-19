@@ -60,6 +60,11 @@ var BabysitterSchema = new Schema({
     unique: false,
     required: false,
     default: 0
+  },
+  photo: {
+    type: String,
+    unique: false,
+    required: false
   }    
 });
 

@@ -20,7 +20,7 @@ const BabysitterListItem = ({babysitter, onBabysitterSelect}) => {
 				       <div className="hexa">
 				          <div className="hex1">
 				            <div className="hex2">
-				              <img src='img/babysitterImg1.jpg' alt="Smiley face" width="130" height="130" />
+				              <img src={babysitter.photo} alt={babysitter._userID.firstName} width="130" height="130" />
 				            </div>
 				          </div>
 				        </div>

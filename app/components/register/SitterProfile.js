@@ -19,6 +19,7 @@ var SitterProfile = React.createClass({
 	    certifications: '', 
 	    ratePerHour: '',
 	    numFavs: '',
+	    photo: '',
 		submitted: false
 		};
 	},
@@ -32,7 +33,7 @@ var SitterProfile = React.createClass({
 	onSubmit: function(e){
 		e.preventDefault();
 		console.log("id before call to database " + this.props.id);
-		helpers.postSitter(this.props.id, this.state.birthdayMonth, this.state.birthdayDay, this.state.birthdayYear, this.state.gender, this.state.isAvailable, this.state.phoneNumber, this.state.bio, this.state.certifications, this.state.ratePerHour).then(function(data){
+		helpers.postSitter(this.props.id, this.state.birthdayMonth, this.state.birthdayDay, this.state.birthdayYear, this.state.gender, this.state.isAvailable, this.state.phoneNumber, this.state.bio, this.state.certifications, this.state.ratePerHour, this.state.photo).then(function(data){
 				this.setState({'submitted': true});
 		}.bind(this));
 	},
@@ -52,6 +53,7 @@ var SitterProfile = React.createClass({
 				    certifications = {this.state.certifications} 
 				    ratePerHour = {this.state.ratePerHour}
 				    numFavs = {this.state.numFavs}
+				    photo = {this.state.photo}
 				/>
 			);
 		} 
@@ -97,6 +99,10 @@ var SitterProfile = React.createClass({
 		        <div className="form-group">
 		          <label htmlFor="ratePerHour" className="control-label col-sm-2">Rate Per Hour</label>
 		          <input type="ratePerHour" className="form-control" name="ratePerHour" id="ratePerHour" value={this.state.ratePerHour} onChange={this.handleChange} required/>
+		        </div>
+		        <div className="form-group">
+		          <label htmlFor="photo" className="control-label col-sm-2">Photo</label>
+		          <input type="photo" className="form-control" name="photo" id="photo" value={this.state.photo} onChange={this.handleChange} required/>
 		        </div>
 		       
 		        <div className="form-group">
