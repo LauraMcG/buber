@@ -35,7 +35,7 @@ var helpers = {
         return response.data;
       });
   },
-  postSitter: function(userID, birthdayMonth, birthdayDay, birthdayYear, gender, isAvailable, phoneNumber, bio, certifications, ratePerHour, numFavs){
+  postSitter: function(userID, birthdayMonth, birthdayDay, birthdayYear, gender, isAvailable, phoneNumber, bio, certifications, ratePerHour, photo, numFavs){
     var newSitter = {
       _userID: userID,
       birthdayMonth: birthdayMonth,
@@ -47,7 +47,8 @@ var helpers = {
       bio: bio,
       certifications: certifications, 
       ratePerHour: ratePerHour,
-      numFavs: numFavs
+      numFavs: numFavs,
+      photo: photo
     };
     return axios.post("/api/babysitters", newSitter)
       .then(function(response){

@@ -50,7 +50,9 @@ var ParentProfile = React.createClass({
 			return (
 				<div className="row">
 			    <div className="col-md-12">
-					      <h2>Parent Profile</h2>
+			    	<div className="row parentRegisterHero">
+					      <h3>Thank you for registering as a Parent.</h3>
+					</div>
 					      <form method="POST" action="api/parents">
 					      	<div className="form-group">
 					          <label className="control-label" htmlFor="address">Address</label>
