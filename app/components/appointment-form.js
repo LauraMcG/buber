@@ -21,9 +21,10 @@ class AppointmentForm extends Component {
   onSubmit(event) {
   		event.preventDefault();
   		this.state.appointmentBooked = true;
+  		console.log(this.props.babysitter._userID._id);
 		helpers.postAppointment(
 			this.props.parentID,
-			this.props.babysitterID,
+			this.props.babysitter._userID._id,
 			this.state.apptDateTime, 
 			this.state.projectedDuration,
 			this.state.sitterAccepted,

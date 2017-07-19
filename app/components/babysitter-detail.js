@@ -4,8 +4,6 @@ import AppointmentForm from './appointment-form';
 
 const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentForm, handleAppointment, handleAppointmentUpdate}) => {
 
-
-
 // this is to check on the status for rendering
 	if (!babysitter) {
 		return (
@@ -31,7 +29,7 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 
 		<div className="row sitterDetail">
 		    <div className="col-md-4 imageBox">
-		      <img src='img/babysitterImg1.jpg' alt="Smiley face"/>
+		      <img src={babysitter.photo} alt={babysitter._userID.firstName}/>
 		    </div>
 
 		    <div className="col-md-8 col-xs-8">
