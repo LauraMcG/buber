@@ -53,9 +53,7 @@ class AppointmentListItem extends Component {
 		} 
 		return (
 			<li key={this.props.appointment._id}
-					className="col-sm-2 appointmentListItem" style={
-        this.state.rejected ? 'display: none' : ''
-      }>
+					className="col-sm-2 appointmentListItem"  >
 
 					<div className = "notAccepted"><h2><strong>Pending...</strong></h2></div>
 					<p>Day: {this.props.appointment.apptDateTime}</p>
