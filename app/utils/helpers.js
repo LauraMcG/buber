@@ -94,6 +94,19 @@ var helpers = {
         return response.data;
       });
   },
+  sitterAcceptAppointment: function(apptID, sitterAccepted){
+    var updateAppt = {
+      _id: apptID,
+      sitterAccepted: sitterAccepted
+    };
+    var url = "/api/appointments/" + apptID;
+    return axios.put(url, updateAppt)
+    .then(function(results) {
+      console.log("axios results", results);
+      console.log(updateAppt);
+        return results;
+    });
+  },
   ///set the babysitter's availability per the toggle request
  putBabysitterAvailability: function (userID, availability) {
     var newAvailability = {

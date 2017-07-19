@@ -22,9 +22,11 @@ const AppointmentList = (props) => {
 
 
 	const AppointmentItems = props.appointments.map((appointment) => {
+		console.log(props);
 		return (
 				<AppointmentListItems 
 				key={appointment._id}
+				id={appointment._id}
 				appointment={appointment} 
 				role={props.role}
 				/>

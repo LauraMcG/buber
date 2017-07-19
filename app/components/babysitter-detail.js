@@ -35,7 +35,7 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 		    </div>
 
 		    <div className="col-md-8 col-xs-8">
-		      <h1>Meet you new favorite sitter:</h1>
+		      <h1>Meet your new favorite sitter:</h1>
 		      <ul className="sitterDetail">
 		        <li><h2>Name:</h2><p>{babysitter._userID.firstName} {babysitter._userID.lastName}</p></li>
 		        

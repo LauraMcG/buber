@@ -70,6 +70,7 @@ router.put("/babysitters/:id", function(req, res) {
       })
   })
 
+
 // Babysitter Delete Route
 router.delete("/babysitters/:id", function(req, res) {
   var id = req.params.id;

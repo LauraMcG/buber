@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+var helpers = require("../utils/helpers");
 
 function AcceptButton(props){
 	return (
@@ -17,10 +18,24 @@ function RejectButton(props){
 }
 
 class AppointmentListItem extends Component {
+	constructor(props) {
+    super(props);
+			this.state = {
+				sitterAccepted: false
+			};
+		this.handleAcceptance = this.handleAcceptance.bind(this);
+	}
 
+	
 
 	handleAcceptance(){
-		console.log("accept")
+		this.setState({sitterAccepted: true}, function(){
+			helpers.sitterAcceptAppointment(this.props.id, this.state.sitterAccepted).then(
+			function(){
+				alert ("appointment accepted");
+			})
+		});
+		
 	}
 
 	handleRejection(){
@@ -43,7 +58,7 @@ class AppointmentListItem extends Component {
 					<p>Day: {this.props.appointment.apptDateTime}</p>
 					<br/>
 					<p>Duration: {this.props.appointment.projectedDuration}</p>
-
+					<br/>
 					{acceptBttn}
 					{rejectBttn}
 

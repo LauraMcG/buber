@@ -30,7 +30,7 @@ class BabysitterView extends Component {
         // Helper to grab all appointments for specific babysiter - i.e. search on babysitter ID
         helpers.getAllAppointments().then(function(appointmentData){
             this.setState({
-                appointments: appointmentData.data,
+                appointments: appointmentData.data
             });
             console.log("all singular babysitter appointments: " , appointmentData.data);
         }.bind(this));

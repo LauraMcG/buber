@@ -101,7 +101,7 @@ router.post("/appointments", function(req, res) {
 // // Route to update Appointment in database
 router.put("/appointments/:id", function(req, res) {
  
-    Appointment.findOneAndUpdate({"_id":req.params.id }, {"$set":req.body})
+    Appointment.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .exec(function(err, doc){
       if (err) {
         console.log(err)

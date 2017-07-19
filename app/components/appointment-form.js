@@ -16,9 +16,9 @@ class AppointmentForm extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
     	
 
-  	}
+  }
 
-  	onSubmit(event) {
+  onSubmit(event) {
   		event.preventDefault();
   		this.state.appointmentBooked = true;
 		helpers.postAppointment(
