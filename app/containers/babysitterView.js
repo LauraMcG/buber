@@ -47,7 +47,59 @@ class BabysitterView extends Component {
     //Show Toggle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
         return (
-            <div> <h1>Hello {this.props.firstName}</h1>
+            <div> 
+
+    <div className="row pink">
+        <div className="col-md-12 babysitterHeroContent">
+          <div className="col-md-4">  
+            <h2>How we <br/> redefined <br/> babysitting</h2>
+          </div>
+
+           <div className="col-md-8 sideBorder">
+
+            <div className="row">
+              <div className="col-sm-6">
+                <h3>Reach Your Neighborhoods</h3>
+                <p>Buber puts you in touch with families in your community. You reach all the kids not just the ones you know.</p>
+              </div>
+
+              <div className="col-sm-6">
+                <h3>Got a Minute? Babysit</h3>
+                <p>Buber puts you in touch with families in your community. You reach all the kids not just the ones you know.</p>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-sm-6">
+                <h3>Upcharge for High Demand</h3>
+                <p>Certain dates book up fast. Get compensated accordingly.</p>
+              </div>
+
+              <div className="col-sm-6">
+                <h3>Calendar</h3>
+                <p>Our appointment noticeboard lists all of your appointments. You'll never forget a sitting appointment again.</p>
+              </div>
+            </div>
+
+       </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h1>Hello {this.props.firstName}</h1>
                 <AppointmentList 
                     appointments = {this.state.appointments}
                     role = "babysitter"

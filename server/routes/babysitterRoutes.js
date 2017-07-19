@@ -22,6 +22,22 @@ router.get("/babysitters", function(req, res) {
 
 });
 
+router.get("/babysitters/available", function(req, res) {
+
+  Babysitter.find({isAvailable: true})
+    .populate("_userID")
+    .exec(function(err, doc) {
+
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.json(doc);
+      }
+  });
+
+});
+
 // Route to get one babysitter
 router.get("/babysitters/:id", function(req, res) {
   var id = req.params.id;
@@ -56,7 +72,6 @@ router.post("/babysitters", function(req, res) {
 // Update Babysitter in database
 
 router.put("/babysitters/:id", function(req, res) {
-      console.log ("axios made it to the put route");
       var id = req.params.id;
 
       Babysitter.findOneAndUpdate({"_userID": id }, req.body)
