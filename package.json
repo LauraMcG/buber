@@ -41,5 +41,9 @@
     "babel-preset-react": "^6.3.13",
     "webpack": "^1.13.1"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
+
   "homepage": "https://github.com/mstorino/buber#readme"
 }

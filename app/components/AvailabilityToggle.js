@@ -38,13 +38,24 @@ class AvailabilityToggle extends Component {
 
   render() {      
     return (    
-      <div>  
-      {/* <OtherComponent /> 
-        {this.state.active && <Child />} */ }
+  
+    /*  <div className="one">
+        <div className="button-wrap" onClick={this.handleClick}>
+          <div className="button-bg">
+            <div className="button-out">unavailable</div>
+            <div className="button-in">available</div>
+            <div className="button-switch"></div>
+          </div>
+        </div>
+      </div>
+    */
+
+      <div>
         <button type="button" onClick={this.handleClick}>
-          Toggle
+          Toggle Availability
         </button> 
-      </div>            
+      </div>
+
     );          
   }
 }
