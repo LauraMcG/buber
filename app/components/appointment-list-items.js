@@ -39,7 +39,7 @@ class AppointmentListItem extends Component {
 	}
 
 	handleRejection(){
-		console.log("reject")
+		alert ("appointment rejected");
 	}
 
 	render(){
