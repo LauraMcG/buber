@@ -71,15 +71,25 @@ var helpers = {
       });
   }, 
     //Get all appointments in which a specific babysitter was requested
-  getAllSitterAppointments: function() {
-    return axios.get("/api/appointments/babysitter/:id")
+  getAllSitterAppointments: function(babysitterID) {
+    var URL = "/api/appointments/babysitters/" + babysitterID;
+    return axios.get(URL)
       .then(function(results) {
         console.log("axios results", results);
         return results;
       });
   },
 
-  postAppointment: function(babysitterID, parentID, apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
+  getAllParentAppointments: function(parentID) {
+    var URL = "/api/appointments/parents" + parentID;
+    return axios.get(URL)
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
+  },
+
+  postAppointment: function(parentID, babysitterID, apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
     var newAppt = {
       _parentID: parentID,
       _babysitterID: babysitterID,

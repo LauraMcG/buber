@@ -58,7 +58,7 @@ class ParentView extends Component {
 			});
 		}.bind(this));
 
-		helpers.getAllAppointments().then(function(appointmentData) {
+		helpers.getParentAppointments(this.props.userID).then(function(appointmentData) {
 			this.setState({ 
 				appointments: appointmentData.data
 			});
@@ -119,7 +119,7 @@ class ParentView extends Component {
 					babysitter={this.state.selectedBabysitter}
 					appointment={this.state.appointments}
 					showAppointmentForm={this.state.showAppointmentForm}
-					handleAppointment={() => this.setState({showAppointmentForm:true, babysitter: this.state.babysitter, appointment:this.state.appointment}) }
+					handleAppointment={() => this.setState({showAppointmentForm: true, babysitter: this.state.babysitter, appointment:this.state.appointment}) }
 					handleAppointmentUpdate={this.handleAppointmentUpdate}
 				/>
 

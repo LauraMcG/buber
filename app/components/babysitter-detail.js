@@ -3,9 +3,7 @@ import AppointmentForm from './appointment-form';
 
 
 const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentForm, handleAppointment, handleAppointmentUpdate}) => {
-
-
-
+	console.log(babysitter);
 // this is to check on the status for rendering
 	if (!babysitter) {
 		return (
