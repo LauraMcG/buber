@@ -60,7 +60,8 @@ app.get('*', function(req,res){
 });
 
 // Mongoose Setup
-mongoose.connect('mongodb://heroku_lvs937ds:rscq92mj5la63p59da6fgn58no@ds113063.mlab.com:13063/heroku_lvs937ds');
+var db = process.env.MONGODB_URI || "mongodb://localhost/buber";
+mongoose.connect(db);
 
 var db = mongoose.connection;
 
