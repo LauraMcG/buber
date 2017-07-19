@@ -56,10 +56,10 @@ router.post("/babysitters", function(req, res) {
 // Update Babysitter in database
 
 router.put("/babysitters/:id", function(req, res) {
-  
+      console.log ("axios made it to the put route");
       var id = req.params.id;
 
-      Babysitter.findOneAndUpdate({"_id": id }, {"$set":req.body})
+      Babysitter.findOneAndUpdate({"_userID": id }, req.body)
       .exec(function(err, doc){
         if (err) {
           console.log(err)

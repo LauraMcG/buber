@@ -1,4 +1,5 @@
 var axios = require("axios");
+var querystring = require("querystring");
 
 var helpers = {
 	postUser: function(firstName, lastName, email, password, role) {
@@ -60,17 +61,27 @@ var helpers = {
         return results;
       });
   },
-
+     //Get all appointments 
   getAllAppointments: function() {
     return axios.get("/api/appointments")
       .then(function(results) {
         console.log("axios results", results);
         return results;
       });
+  }, 
+    //Get all appointments in which a specific babysitter was requested
+  getAllSitterAppointments: function() {
+    return axios.get("/api/appointments/babysitter/:id")
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
   },
 
-  postAppointment: function(apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
-    var newAppt = { 
+  postAppointment: function(babysitterID, parentID, apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
+    var newAppt = {
+      _parentID: parentID,
+      _babysitterID: babysitterID,
       apptDateTime: apptDateTime,
       projectedDuration: projectedDuration,
       sitterAccepted: sitterAccepted,
@@ -83,19 +94,23 @@ var helpers = {
       });
   },
   ///set the babysitter's availability per the toggle request
-  putBabysitterAvailability: function (userID, availability) {
+ putBabysitterAvailability: function (userID, availability) {
     var newAvailability = {
       isAvailable: availability
     };
 
     var putURL = "/api/babysitters/" + userID;
+    console.log(putURL);
+    console.log(newAvailability);
 
     return axios.put(putURL, newAvailability).then(function(response) {
+      console.log("putBabysitterAvailability axios results:", response.data);
       return response.data;
+
     });
   }
 
-};
 
+};
 
 module.exports = helpers;
