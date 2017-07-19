@@ -269,6 +269,9 @@ h2.sitterName {
 
 
 /*Apppointments*/
+.AppointmentList {
+	padding-left: 20px;
+}
 ul.appointmentListItems {
 	list-style: none;
 
@@ -309,4 +312,27 @@ h3.registerHeader {
 
 h3.parentRegisterHero, h3.sitterRegisterHero{
 	padding-top: 20px;
+}
+
+
+
+/*babysitterView Styles*/
+
+.babysitterHeroContent {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	
+}
+
+.babysitterHeroContent h2{
+	font-size: 52px;
+	letter-spacing: 2px;
+	padding-left:5px;
+	padding-top:10px;
+}
+
+.sideBorder{
+	border-left: 1px dotted black;
+	padding-left: 40px;
+	float:right;
 }
