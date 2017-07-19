@@ -1,4 +1,5 @@
 var axios = require("axios");
+var querystring = require("querystring");
 
 var helpers = {
 	postUser: function(firstName, lastName, email, password, role) {
@@ -93,19 +94,23 @@ var helpers = {
       });
   },
   ///set the babysitter's availability per the toggle request
-  putBabysitterAvailability: function (userID, availability) {
+ putBabysitterAvailability: function (userID, availability) {
     var newAvailability = {
       isAvailable: availability
     };
 
     var putURL = "/api/babysitters/" + userID;
+    console.log(putURL);
+    console.log(newAvailability);
 
     return axios.put(putURL, newAvailability).then(function(response) {
+      console.log("putBabysitterAvailability axios results:", response.data);
       return response.data;
+
     });
   }
 
-};
 
+};
 
 module.exports = helpers;

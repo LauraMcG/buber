@@ -13,9 +13,14 @@ const BabysitterList = (props) => {
 	});
 
 	return (
-		<ul className="col-md-4 list-group">
-			{babysitterItems}
-		</ul>
+		<div className="row sitterRow">
+			<div className="col-md-12 col-xs-12">
+		    	<h2>Our Babysitters</h2>
+		    	<ul>
+		    		{babysitterItems}
+		    	</ul>
+		    </div>
+		</div>
 	);
 };
 
