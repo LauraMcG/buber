@@ -1,4 +1,5 @@
 /*utility classes*/
+
 .borderbox {
 	border: solid 2px papayawhip;
 }
@@ -6,13 +7,29 @@
 	text-decoration: underline;
 }
 
+.container-fluid {
+	padding:0px;
+}
+
+.row {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+label {
+	font-weight: 300;
+}
+
 /*FONTS*/
 body {
 	font-family: 'Open Sans', sans-serif;
 	color: #414b56;
+	width: 100%;
 }
 
-
+h1 {
+	padding-left: 20px;
+}
 h2 {
 	font-family: 'Open Sans';
 	font-size: 18px;
@@ -22,6 +39,7 @@ h2 {
 h1, h3 {
 	font-family: 'Spectral', serif;
 }
+
 
 /*page specific headers*/
 nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
@@ -50,6 +68,11 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 	background-color: #dce6ff;
 	color:#333;
 }
+
+/*.btn:active, .btn-primary:active {
+	background-color: #dce6ff;
+	color:#333;
+}*/
 .btn-blue {
 	border-color:#B9DBE9;
 	color: #7EB4D3;
@@ -66,7 +89,7 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 }
 
 .navbar {
-	padding: 10px 0px 10px 0px; 
+	padding: 10px 0px 10px 20px; 
 	margin-bottom: 0px;
 }
 
@@ -77,7 +100,7 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 }
 
 .pink {
-	background-color: mistyrose;
+	background-color: #fff4f0;
 }
 
 .darkgrey {
@@ -94,11 +117,34 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 	padding-top: 90px;
 }
 
+.heroParentContent {
+	padding-top: 40px;
+}
+
+.heroParentContent h1 {
+	padding-bottom: 40px;
+}
+
+.heroParentContent p {
+	line-height: 24px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.parentHeroListItem {
+	border-right: 1px solid #dce6ff;
+}
+
+
 
 /*babysitter list*/
 .sitterRow, .allSitters {
 
 	margin-top:20px;
+}
+
+.sitterRow {
+	margin-bottom: 60px;
 }
 
 .appointmentListItem h2, .appointmentListItem p, .sitterRow h2, .sitterRow p, .sitterDetail h2, .sitterDetail h3, .sitterDetail p   {
@@ -111,6 +157,9 @@ h2.sitterName {
     display:block;
 }
 
+.sitterName {
+	height: 40px;
+}
 .listContainer p{
 	padding-top: 20px;
 }
@@ -242,3 +291,18 @@ li.appointmentListItem {
 	background-color: #dce6ff; 
 	padding-top: 4px;
 }*/
+
+/*register*/
+
+h3.registerHeader {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.parentRegisterHero, .sitterRegisterHero {
+	height: 100px;
+}
+
+h3.parentRegisterHero, h3.sitterRegisterHero{
+	padding-top: 20px;
+}

@@ -72,8 +72,43 @@ class ParentView extends Component {
 		return (
 			<div>
 				
+
+				<div className="row mainRow pink">
+
+					<div className="col-md-12 heroParentContent text-center">
+
+					    <h1>{this.props.firstName}, booking a babysitter is as easy as one, two, three. </h1>
+
+					    <div className="col-md-4">
+					      		<h3 className="parentHeroListItem">1. Shop Local</h3> 
+					      		<br />
+					      		<p>Here is a list of babysitters who are right outside your front door. Click a profile to see more details.
+					      		</p>
+					    </div>
+					      	
+					    <div className="col-md-4">
+					      		<h3 className="parentHeroListItem">2. Look & Book</h3> 
+					      		<br />
+					      		<p>When you book a sitter & enter your appointment details the sitter will be notified. You'll receive confirmation when the sitter accepts your request.
+					      		</p>
+					    </div>
+					      	
+					    <div className="col-md-4">
+
+					      		<h3>3. Have Fun</h3>
+					      		<br/>
+					      		<p>Enjoy your time away knowing that  your kids are spending time with a neighborhood babysitter. Remember, it takes a village to babysit a child. 
+					      		</p>
+					    </div>
+
+					      	  	
+					     	
+
+					</div>
+
+
+				</div> 
 				
-				<h1>Welcome {this.props.firstName}</h1>
 				<AppointmentList 
 					appointments= {this.state.appointments}
 				/>

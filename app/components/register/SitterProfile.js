@@ -58,7 +58,9 @@ var SitterProfile = React.createClass({
 		return (
 			<div className="row">
 		    <div className="col-md-12">
-		      <h2>Sitter Profile</h2>
+		    	<div className="sitterRegisterHero">
+		      		<h3>Thank you for registering as a Babysitter.</h3>
+		      	</div>
 		      <form method="POST" action="/api/babysitters">
 		      	<div className="form-group">
 		          <label className="control-label" htmlFor="birthdayMonth">Birthday Month</label>
