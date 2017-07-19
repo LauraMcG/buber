@@ -55,9 +55,9 @@ app.use("/api", userRoutes);
 
 
 //fallback route
-app.get('*', function(req,res){
-	res.sendFile(__dirname + '/public/index.html');
-});
+// app.get('*', function(req,res){
+// 	res.sendFile(__dirname + '/public/index.html');
+// });
 
 // Mongoose Setup
 mongoose.connect('mongodb://heroku_lvs937ds:rscq92mj5la63p59da6fgn58no@ds113063.mlab.com:13063/heroku_lvs937ds');
