@@ -93,6 +93,10 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 	margin-bottom: 0px;
 }
 
+.navbar-brand{
+	padding: 10px 0px 0px 0px;
+	margin-left:0px;
+}
 /*COLORS*/
 
 .seafoam {
@@ -201,8 +205,9 @@ h2.sitterName {
 /*sitter detail*/
 
 .sitterDetail {
-	padding-top:20px;
-	padding-bottom:20px;
+	
+	height:100px;
+
 }
 .sitterDetail h2, .sitterDetail p {
 	margin-top:0px;
@@ -212,6 +217,10 @@ h2.sitterName {
 .sitterDetail h2  {
 	padding-right:4px;
 	letter-spacing: 2px;
+}
+.sitterDetail h3  {
+	padding-top:15px;
+	
 }
 
 

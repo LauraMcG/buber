@@ -11,7 +11,10 @@ var MainNav = React.createClass({
 
                 <div className="row navbar-header">
                       <Link className="navbar-brand" to="/">
-                        Babysitters Club
+                       
+                        
+                          <img src= 'img/buberLogo.png' height ="20px"/>
+                       
                       </Link>
 
                       <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#cb-navbar-collapse-1" aria-expanded="false">

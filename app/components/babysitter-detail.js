@@ -7,9 +7,9 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 // this is to check on the status for rendering
 	if (!babysitter) {
 		return (
-			<div className="row sitterDetail">
-				<div className="col-md-12">
-					<h3>Let's find the perfect babysitter...</h3>
+			<div className="row sitterDetail pink">
+				<div className="col-md-12 text-center">
+					<h3>Let's find your perfect babysitter.</h3>
 				</div>
 			</div>
 		);
