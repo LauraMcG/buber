@@ -36,28 +36,48 @@ class AvailabilityToggle extends Component {
     // console.log("this.props.id", this.props._userID);
   }
 
-  render() {      
-    return (    
-  
-    /*  <div className="one">
-        <div className="button-wrap" onClick={this.handleClick}>
-          <div className="button-bg">
-            <div className="button-out">unavailable</div>
-            <div className="button-in">available</div>
-            <div className="button-switch"></div>
-          </div>
-        </div>
-      </div>
-    */
-
-      <div>
+  render() {   
+    if (this.props.isAvailable) {
+      return (
+        <div>  
         <button type="button" onClick={this.handleClick}>
-          Toggle Availability
+          Available
         </button> 
-      </div>
-
+        </div>   
+      );
+    }   
+    return (    
+      <div>  
+        <button type="button" onClick={this.handleClick}>
+          Unavailable
+        </button> 
+      </div>            
     );          
   }
+
+
+  // render() {      
+  //   return (    
+  
+  //     <div className="one">
+  //       <div className="button-wrap" onClick={this.handleClick}>
+  //         <div className="button-bg">
+  //           <div className="button-out">unavailable</div>
+  //           <div className="button-in">available</div>
+  //           <div className="button-switch"></div>
+  //         </div>
+  //       </div>
+  //     </div>
+    
+
+  //     <div>
+  //       <button type="button" onClick={this.handleClick}>
+  //         Toggle Availability
+  //       </button> 
+  //     </div>
+
+  //   );          
+  // }
 }
 
 export default AvailabilityToggle;
