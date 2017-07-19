@@ -19,18 +19,21 @@ var SitterProfile = React.createClass({
 	    certifications: '', 
 	    ratePerHour: '',
 	    numFavs: '',
-			submitted: false
+	    photo: '',
+		submitted: false
 		};
 	},
+
 	handleChange: function(event){
 		var newState = {};
-    newState[event.target.name] = event.target.value;
-    this.setState(newState);
+    	newState[event.target.name] = event.target.value;
+    	this.setState(newState);
 	},
+
 	onSubmit: function(e){
 		e.preventDefault();
 		console.log("id before call to database " + this.props.id);
-		helpers.postSitter(this.props.id, this.state.birthdayMonth, this.state.birthdayDay, this.state.birthdayYear, this.state.gender, this.state.isAvailable, this.state.phoneNumber, this.state.bio, this.state.certifications, this.state.ratePerHour).then(function(data){
+		helpers.postSitter(this.props.id, this.state.birthdayMonth, this.state.birthdayDay, this.state.birthdayYear, this.state.gender, this.state.isAvailable, this.state.phoneNumber, this.state.bio, this.state.certifications, this.state.ratePerHour, this.state.photo).then(function(data){
 				this.setState({'submitted': true});
 		}.bind(this));
 	},
@@ -38,25 +41,28 @@ var SitterProfile = React.createClass({
 		if (this.state.submitted){
 			return (
 				<BabysitterView 
-					_userID = {this.props.id}
+					userID = {this.props.id}
 					firstName = {this.props.firstName}
 					birthdayMonth = {this.state.birthdayMonth}
-		      birthdayDay = {this.state.birthdayDay}
-		      birthdayYear = {this.state.birthdayYear}
-		      gender = {this.state.gender}
-		      isAvailable = {this.state.isAvailable}
-		      phoneNumber = {this.state.phoneNumber}
-		      bio = {this.state.bio}
-		      certifications = {this.state.certifications} 
-		      ratePerHour = {this.state.ratePerHour}
-		      numFavs = {this.state.numFavs}
+				    birthdayDay = {this.state.birthdayDay}
+				    birthdayYear = {this.state.birthdayYear}
+				    gender = {this.state.gender}
+				    isAvailable = {this.state.isAvailable}
+				    phoneNumber = {this.state.phoneNumber}
+				    bio = {this.state.bio}
+				    certifications = {this.state.certifications} 
+				    ratePerHour = {this.state.ratePerHour}
+				    numFavs = {this.state.numFavs}
+				    photo = {this.state.photo}
 				/>
 			);
 		} 
 		return (
 			<div className="row">
 		    <div className="col-md-12">
-		      <h2>Sitter Profile</h2>
+		    	<div className="sitterRegisterHero">
+		      		<h3>Thank you for registering as a Babysitter.</h3>
+		      	</div>
 		      <form method="POST" action="/api/babysitters">
 		      	<div className="form-group">
 		          <label className="control-label" htmlFor="birthdayMonth">Birthday Month</label>
@@ -93,6 +99,10 @@ var SitterProfile = React.createClass({
 		        <div className="form-group">
 		          <label htmlFor="ratePerHour" className="control-label col-sm-2">Rate Per Hour</label>
 		          <input type="ratePerHour" className="form-control" name="ratePerHour" id="ratePerHour" value={this.state.ratePerHour} onChange={this.handleChange} required/>
+		        </div>
+		        <div className="form-group">
+		          <label htmlFor="photo" className="control-label col-sm-2">Photo</label>
+		          <input type="photo" className="form-control" name="photo" id="photo" value={this.state.photo} onChange={this.handleChange} required/>
 		        </div>
 		       
 		        <div className="form-group">

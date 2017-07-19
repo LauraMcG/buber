@@ -1,20 +1,84 @@
-/*FONTS*/
+/*utility classes*/
 
+.borderbox {
+	border: solid 2px papayawhip;
+}
+.underlineSpan {
+	text-decoration: underline;
+}
+
+.container-fluid {
+	padding:0px;
+}
+
+.row {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+label {
+	font-weight: 300;
+}
+
+/*FONTS*/
 body {
 	font-family: 'Open Sans', sans-serif;
 	color: #414b56;
+	width: 100%;
 }
 
-nav a, .favSitter, h2{
+h1 {
+	padding-left: 20px;
+}
+h2 {
+	font-family: 'Open Sans';
+	font-size: 18px;
+}
+
+
+h1, h3 {
+	font-family: 'Spectral', serif;
+}
+
+
+/*page specific headers*/
+nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 	text-transform: uppercase;
 	font-size: 12px;
 	font-weight: 400;
 	letter-spacing: 2.5px;
 }
 
-h2 {
-	font-size: 20px;
+/*buttons*/
+.btn, .btn-default, .btn-primary {
+	border: 1px solid #a1a4a6;
+	background: #fff;
+	text-shadow:none;
+	border-radius: 0;
+	text-transform: uppercase;
+	font-size:12px;
+	color: #333;
 }
+
+.btn-large {
+	font-size: 16px;
+}
+
+.btn:hover {
+	background-color: #dce6ff;
+	color:#333;
+}
+
+/*.btn:active, .btn-primary:active {
+	background-color: #dce6ff;
+	color:#333;
+}*/
+.btn-blue {
+	border-color:#B9DBE9;
+	color: #7EB4D3;
+}
+
+/*nav*/
 .navbar-default .navbar-brand, h2 {
 	letter-spacing: 4px;
 	font-weight:600;
@@ -25,27 +89,25 @@ h2 {
 }
 
 .navbar {
-	padding: 10px 0px 10px 0px; 
+	padding: 10px 0px 10px 20px; 
 	margin-bottom: 0px;
 }
-/*COLORS*/
 
-.blue {
-	background-color: #4694b9;
-}
+/*COLORS*/
 
 .seafoam {
 	background-color: #badbcb;
 }
 
 .pink {
-	background-color: #e8bfcd;
+	background-color: #fff4f0;
 }
 
 .darkgrey {
 	color: #414b56;
 }
 
+/*hero containers*/
 .mainRow {
 	height:400px;
 
@@ -54,25 +116,197 @@ h2 {
 .heroContent {
 	padding-top: 90px;
 }
-h1, h3 {
-	font-family: 'Spectral', serif;
+
+.heroParentContent {
+	padding-top: 40px;
 }
 
-.underlineSpan {
-	text-decoration: underline;
+.heroParentContent h1 {
+	padding-bottom: 40px;
 }
 
-.box {
-	height: 100px;
-	background-color: #e8bfcd;
-	border: 1px solid darkgrey;
+.heroParentContent p {
+	line-height: 24px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
-.favSitter {
-	padding-top:16px;
-
+.parentHeroListItem {
+	border-right: 1px solid #dce6ff;
 }
 
+
+
+/*babysitter list*/
 .sitterRow, .allSitters {
-	height: 200px;
+
+	margin-top:20px;
+}
+
+.sitterRow {
+	margin-bottom: 60px;
+}
+
+.appointmentListItem h2, .appointmentListItem p, .sitterRow h2, .sitterRow p, .sitterDetail h2, .sitterDetail h3, .sitterDetail p   {
+	display: inline-block;
+}
+
+h2.sitterName {
+	margin-top: 0px;
+    padding-bottom: 10px;
+    display:block;
+}
+
+.sitterName {
+	height: 40px;
+}
+.listContainer p{
+	padding-top: 20px;
+}
+.listContainer h2{
+	margin: 0px;
+}
+
+.listContainer {
+	min-height:280px;
+	padding-bottom:10px;
+}
+.sitterThumbnail {
+	border-radius:50px;
+}
+
+.sitterListItem, .appointmentListItem {
+	
+
+	
+	
+	border-top: solid 2px #dce6ff;
+	border-right: solid 2px #dce6ff;
+	border-bottom: solid 2px #fff4f0;
+	border-left: solid 2px #fff4f0;
+
+}
+.sitterListItem {
+	height: 300px;
+	min-height: 360px;	
+	padding-top:16px;
+	margin-left: 10px;
+}
+
+.sitterListItem .btn {
+	display: block;
+	margin: 0 auto;
+}
+
+/*sitter detail*/
+
+.sitterDetail {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.sitterDetail h2, .sitterDetail p {
+	margin-top:0px;
+	font-size: 16px;
+}
+
+.sitterDetail h2  {
+	padding-right:4px;
+	letter-spacing: 2px;
+}
+
+
+.sitterDetail ul{
+	list-style: none;
+	padding-top: 20px;
+	padding-bottom:20px;
+}
+.sitterRow ul {
+	list-style: none;
+}
+
+.sitterDetail li{
+	
+	padding-bottom:4px;
+}
+
+.sitterDetail img {
+	width:100%;
+	border-top: solid 10px #dce6ff;
+	border-right: solid 10px #dce6ff;
+	border-bottom: solid 10px #fff4f0;
+	border-left: solid 10px #fff4f0;
+	;
+}
+
+/*
+ * ==== hexagon
+ */
+.hexa, .hexa div {
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+.hexa {
+  width: 130px;
+  height: 92px;
+}
+.hexa div {
+  width: 100%;
+  height: 100%;
+}
+.hexa {
+  transform: rotate(120deg);
+}
+.hex1 {
+  transform: rotate(-60deg);
+}
+.hex2 {
+  transform: rotate(-60deg);
+}
+
+
+
+/*Apppointments*/
+ul.appointmentListItems {
+	list-style: none;
+
+	
+}
+
+li.appointmentListItem {
+	margin-left:20px;
+	margin-bottom:20px;
+	min-height: 160px;
+}
+
+.notAccepted {
+	padding-bottom: 28px;
+}
+
+/*.notAccepted {
+	width: 100%;
+	height: 20px;
+	background-color: #dce6ff; 
+	padding-top: 4px;
+}*/
+
+/*register*/
+
+.registerRow{
+	padding-bottom: 60px;
+}
+
+h3.registerHeader {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.parentRegisterHero, .sitterRegisterHero {
+	height: 100px;
+}
+
+h3.parentRegisterHero, h3.sitterRegisterHero{
+	padding-top: 20px;
 }

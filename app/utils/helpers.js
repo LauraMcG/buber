@@ -1,4 +1,5 @@
 var axios = require("axios");
+var querystring = require("querystring");
 
 var helpers = {
 	postUser: function(firstName, lastName, email, password, role) {
@@ -34,7 +35,7 @@ var helpers = {
         return response.data;
       });
   },
-  postSitter: function(userID, birthdayMonth, birthdayDay, birthdayYear, gender, isAvailable, phoneNumber, bio, certifications, ratePerHour, numFavs){
+  postSitter: function(userID, birthdayMonth, birthdayDay, birthdayYear, gender, isAvailable, phoneNumber, bio, certifications, ratePerHour, photo, numFavs){
     var newSitter = {
       _userID: userID,
       birthdayMonth: birthdayMonth,
@@ -46,7 +47,8 @@ var helpers = {
       bio: bio,
       certifications: certifications, 
       ratePerHour: ratePerHour,
-      numFavs: numFavs
+      numFavs: numFavs,
+      photo: photo
     };
     return axios.post("/api/babysitters", newSitter)
       .then(function(response){
@@ -60,17 +62,37 @@ var helpers = {
         return results;
       });
   },
-
+     //Get all appointments 
   getAllAppointments: function() {
     return axios.get("/api/appointments")
       .then(function(results) {
         console.log("axios results", results);
         return results;
       });
+  }, 
+    //Get all appointments in which a specific babysitter was requested
+  getAllSitterAppointments: function(babysitterID) {
+    var URL = "/api/appointments/babysitters/" + babysitterID;
+    return axios.get(URL)
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
   },
 
-  postAppointment: function(apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
-    var newAppt = { 
+  getAllParentAppointments: function(parentID) {
+    var URL = "/api/appointments/parents" + parentID;
+    return axios.get(URL)
+      .then(function(results) {
+        console.log("axios results", results);
+        return results;
+      });
+  },
+
+  postAppointment: function(parentID, babysitterID, apptDateTime, projectedDuration, sitterAccepted, appointmentBooked) {
+    var newAppt = {
+      _parentID: parentID,
+      _babysitterID: babysitterID,
       apptDateTime: apptDateTime,
       projectedDuration: projectedDuration,
       sitterAccepted: sitterAccepted,
@@ -83,19 +105,23 @@ var helpers = {
       });
   },
   ///set the babysitter's availability per the toggle request
-  putBabysitterAvailability: function (userID, availability) {
+ putBabysitterAvailability: function (userID, availability) {
     var newAvailability = {
       isAvailable: availability
     };
 
     var putURL = "/api/babysitters/" + userID;
+    console.log(putURL);
+    console.log(newAvailability);
 
     return axios.put(putURL, newAvailability).then(function(response) {
+      console.log("putBabysitterAvailability axios results:", response.data);
       return response.data;
+
     });
   }
 
-};
 
+};
 
 module.exports = helpers;

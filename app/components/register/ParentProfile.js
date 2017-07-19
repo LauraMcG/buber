@@ -33,8 +33,8 @@ var ParentProfile = React.createClass({
 		if (this.state.submitted){
 			return(
 					<ParentView
-						_userID = {this.props.id}
-						firstName = {this.props.firstName}
+				  userID = {this.props.id}
+				  firstName = {this.props.firstName}
 			      address = {this.state.address} 
 			      phoneNumber = {this.state.phoneNumber} 
 			      numChildren = {this.state.numChildren} 
@@ -50,7 +50,9 @@ var ParentProfile = React.createClass({
 			return (
 				<div className="row">
 			    <div className="col-md-12">
-					      <h2>Parent Profile</h2>
+			    	<div className="row parentRegisterHero">
+					      <h3>Thank you for registering as a Parent.</h3>
+					</div>
 					      <form method="POST" action="api/parents">
 					      	<div className="form-group">
 					          <label className="control-label" htmlFor="address">Address</label>

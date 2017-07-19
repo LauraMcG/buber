@@ -36,13 +36,13 @@ router.get("/appointments/populate", function(req, res) {
     });
 });
 
-// Route to get all of the appointments for an individual parent
-router.get("/appointments/parents/:id", function(req, res) {
-  //query to find all appointments
-
-  Appointment.find({"_parentID" : req.params.id})
-    .populate("_babysitterID")
+// Route to get all of the appointments for an individual babysitter
+router.get("/appointments/babysitters/:id", function(req, res) {
+  //query to find all appointments with the babysitter id in the params
+  Appointment.find({ "_babysitterID" : req.params.id, "sitterAccepted": false})
+    // .populate("_parentID") //
     .exec(function(err, doc) {
+
       if (err) {
         console.log(err);
       }
@@ -52,11 +52,11 @@ router.get("/appointments/parents/:id", function(req, res) {
     });
 });
 
-// Route to get all of the appointments for an individual babysitter
-router.get("/appointments/babysitters/:id", function(req, res) {
+// Route to get all of the appointments for an individual parent
+router.get("/appointments/parents/:id", function(req, res) {
   //query to find all appointments with the babysitter id in the params
-  Appointment.find({ "_babysitterID" : req.params.id })
-    .populate("_parentID")
+  Appointment.find({ "_parentID" : req.params.id, "sitterAccepted": false})
+    // .populate("_parentID") //
     .exec(function(err, doc) {
 
       if (err) {
@@ -85,11 +85,10 @@ router.get("/appointments/:id", function(req, res) {
     });
 });
 
-
 // // // Route to add new Appointment to database
 router.post("/appointments", function(req, res) {
   var newAppointment = new Appointment(req.body);
-
+  console.log(req.body);
   newAppointment.save(function(err, doc) {
     if (err) {
       console.log(err);
