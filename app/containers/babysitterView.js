@@ -9,7 +9,7 @@ class BabysitterView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            appointments: [] ,
+            appointments: [],
             availability: true,
         };
         this.handleAvailabilityUpdate=this.handleAvailabilityUpdate.bind(this);
@@ -22,6 +22,14 @@ class BabysitterView extends Component {
         this.setState ({
             availability: newAvailability
         });
+
+        //When toogle is clicked, check for updated appointments
+        helpers.getAllSitterAppointments(this.props._userID).then(function(appointmentData){
+            this.setState({
+                appointments: appointmentData.data,
+            });
+            console.log("all singular babysitter appointments: " , appointmentData.data);
+        }.bind(this));
 
         console.log("handleAvailabilityUpdate after: " , availability);
     }

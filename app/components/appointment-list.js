@@ -6,12 +6,10 @@ import React from 'react';
 import AppointmentListItems from './appointment-list-items';
 
 const AppointmentList = (props) => {
-
+	console.log(props);
 	//if no upcoming appointments are received,
 	//display message that reflects this in the component.
-
-	//vv this isn't working yet.
-	if (props.appointments.length === undefined || props.appointments.length === 0 || props.appointments.length === null) {
+	if (props.appointments.length === 0) {
 		return (
 			<div className="AppointmentList">
 				<h3>Upcoming Appointments</h3>
@@ -20,7 +18,7 @@ const AppointmentList = (props) => {
 			);
 	};
 
-	console.log(props);
+	
 	const AppointmentItems = props.appointments.map((appointment) => {
 		return (
 				<AppointmentListItems 
