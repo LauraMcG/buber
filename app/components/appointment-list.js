@@ -26,6 +26,7 @@ const AppointmentList = (props) => {
 				<AppointmentListItems 
 				key={appointment._id}
 				appointment={appointment} 
+				role={props.role}
 				/>
 		);
 	});

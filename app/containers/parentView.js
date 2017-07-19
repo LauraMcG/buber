@@ -76,6 +76,7 @@ class ParentView extends Component {
 				<h1>Welcome {this.props.firstName}</h1>
 				<AppointmentList 
 					appointments= {this.state.appointments}
+					role="parent"
 				/>
 				
 				<BabysitterDetail

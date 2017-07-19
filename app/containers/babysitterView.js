@@ -40,9 +40,11 @@ class BabysitterView extends Component {
     //Show Toggle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
         return (
-            <div> <h1>Hello!</h1>
+            <div> <h1>Hello {this.props.firstName}</h1>
                 <AppointmentList 
-                    appointments = {this.state.appointments}/>
+                    appointments = {this.state.appointments}
+                    role = "babysitter"
+                />
                 <AvailabilityToggle 
                     _userID = {this.props._userID}
                     handleAvailabilityUpdate = {this.handleAvailabilityUpdate} 
