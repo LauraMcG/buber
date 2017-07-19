@@ -52,7 +52,7 @@ class ParentView extends Component {
 
 
 	componentDidMount() {
-		helpers.getAllBabysitters().then(function(babysitterData) {
+		helpers.getAvailableBabysitters().then(function(babysitterData) {
 			this.setState({ 
 				babysitters: babysitterData.data,
 			});

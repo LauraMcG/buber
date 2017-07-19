@@ -56,6 +56,7 @@ var helpers = {
         return response.data;
       });
   },
+
   getAllBabysitters: function() {
     return axios.get("/api/babysitters")
       .then(function(results) {
@@ -63,6 +64,16 @@ var helpers = {
         return results;
       });
   },
+  
+  //retrieve the data for babysitters with isAvailable set as true
+  getAvailableBabysitters: function() {
+    return axios.get("/api/babysitters/available")
+    .then(function(results) {
+      console.log("getAvailableBabysitters ran ok");
+      return results;
+    });
+  },
+
      //Get all appointments 
   getAllAppointments: function() {
     return axios.get("/api/appointments")
