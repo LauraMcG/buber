@@ -71,7 +71,7 @@ var helpers = {
   }, 
     //Get all appointments in which a specific babysitter was requested
   getAllSitterAppointments: function(babysitterID) {
-    var URL = "/api/babysitters/" + babysitterID;
+    var URL = "/api/appointments/babysitters/" + babysitterID;
     return axios.get(URL)
       .then(function(results) {
         console.log("axios results", results);
@@ -80,7 +80,7 @@ var helpers = {
   },
 
   getAllParentAppointments: function(parentID) {
-    var URL = "/api/babysitters/" + parentID;
+    var URL = "/api/appointments/parents" + parentID;
     return axios.get(URL)
       .then(function(results) {
         console.log("axios results", results);

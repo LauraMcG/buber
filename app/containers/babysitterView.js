@@ -22,28 +22,27 @@ class BabysitterView extends Component {
         this.setState ({
             availability: newAvailability
         });
+        console.log("handleAvailabilityUpdate after: " , availability);
 
-        //When toogle is clicked, check for updated appointments
-        helpers.getAllSitterAppointments(this.props._userID).then(function(appointmentData){
+        //Check for new appointments
+        helpers.getAllSitterAppointments(this.props.userID).then(function(appointmentData){
             this.setState({
                 appointments: appointmentData.data,
             });
             console.log("all singular babysitter appointments: " , appointmentData.data);
         }.bind(this));
-
-        console.log("handleAvailabilityUpdate after: " , availability);
     }
 
     componentDidMount () {
         // Helper to grab all appointments for specific babysiter - i.e. search on babysitter ID
-        helpers.getAllSitterAppointments(this.props._userID).then(function(appointmentData){
+        helpers.getAllSitterAppointments(this.props.userID).then(function(appointmentData){
             this.setState({
                 appointments: appointmentData.data,
             });
             console.log("all singular babysitter appointments: " , appointmentData.data);
         }.bind(this));
 
-        console.log("this.props._userID", this.props._userID);
+        console.log("this.props._userID", this.props.userID);
     }
     //Show Toggle Availability for Babysitter and show appointment (that user's, ideally)
     render () {
@@ -52,7 +51,7 @@ class BabysitterView extends Component {
                 <AppointmentList 
                     appointments = {this.state.appointments}/>
                 <AvailabilityToggle 
-                    _userID = {this.props._userID}
+                    _userID = {this.props.userID}
                     handleAvailabilityUpdate = {this.handleAvailabilityUpdate} 
                 />
 

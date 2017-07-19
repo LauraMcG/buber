@@ -40,7 +40,7 @@ var SitterProfile = React.createClass({
 		if (this.state.submitted){
 			return (
 				<BabysitterView 
-					_userID = {this.props.id}
+					userID = {this.props.id}
 					firstName = {this.props.firstName}
 					birthdayMonth = {this.state.birthdayMonth}
 				    birthdayDay = {this.state.birthdayDay}

@@ -23,7 +23,7 @@ class ParentView extends Component {
 			babysitters: [],
 			selectedBabysitter: null,
 			appointments: [],
-			showAppointmentForm: true,
+			showAppointmentForm: false,
 			babysitterID: null,
 		};
 		// this.handleAppointment=this.handleAppointment.bind(this);
