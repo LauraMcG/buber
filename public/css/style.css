@@ -201,8 +201,9 @@ h2.sitterName {
 /*sitter detail*/
 
 .sitterDetail {
-	padding-top:20px;
-	padding-bottom:20px;
+	
+	height:100px;
+
 }
 .sitterDetail h2, .sitterDetail p {
 	margin-top:0px;
@@ -212,6 +213,10 @@ h2.sitterName {
 .sitterDetail h2  {
 	padding-right:4px;
 	letter-spacing: 2px;
+}
+.sitterDetail h3  {
+	padding-top:15px;
+	
 }
 
 
