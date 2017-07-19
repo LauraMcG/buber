@@ -18,9 +18,9 @@ var Router = router.Router;
 var browserHistory = router.browserHistory;
 
 // Reference the high-level components
-var Home = require("../containers/Home");
-var Login = require("../containers/Login");
-var Register = require("../containers/Register");
+var Home = require("../containers/home");
+var Login = require("../containers/login");
+var Register = require("../containers/register");
 var SitterProfile = require("../components/register/SitterProfile");
 var ParentProfile = require("../components/register/ParentProfile");
 var BabysitterView = require("../containers/babysitterView");
