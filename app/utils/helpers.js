@@ -11,9 +11,25 @@ var helpers = {
     	password: password,
     	role: role
     };
-    return axios.post("/api/users", newUser)
+    return axios.post("/auth/users", newUser)
       .then(function(response) {
         console.log(response.data._id);
+        return response.data._id;
+      });
+    
+  },
+  checkUser: function(email, password) {
+    var newUser = { 
+      email: email,
+      password: password,
+    };
+    console.log("Login information is reaching the helpers!");
+    console.log(newUser);
+    return axios.post("/auth/login", newUser)
+      .then(function(response) {
+        console.log(response.data._id);
+        console.log(response.data.email);
+        console.log(response.data.role);
         return response.data._id;
       });
     

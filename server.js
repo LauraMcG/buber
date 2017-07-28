@@ -53,6 +53,9 @@ app.use("/api", appointmentRoutes);
 var userRoutes = require("./server/routes/userRoutes");
 app.use("/api", userRoutes);
 
+// adding userRoute
+var passportRoutes = require("./server/routes/passport-routes-authentication");
+app.use("/auth", passportRoutes);
 
 //fallback route
 app.get('*', function(req,res){
