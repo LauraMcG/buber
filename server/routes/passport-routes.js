@@ -1,13 +1,37 @@
-var passport = require("passport");
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const passport = require("passport");
+const User = require("../models/User");
+const router = express.Router();
 
-//Component Dependencies
+router.get("/", (req, res) => {
+	res.sendFile(__dirname + "/public/index.html");
+});
+
+router.post("/register", (req, res) => {
+    console.log(req.body);
+    User.register(new User(
+        { username: req.body.username}),
+        req.body.password,
+        (err, User) => {
+            if (err) {
+                return res.send({ User : User });
+        }
+
+        passport.authenticate("local")(req, res, () => {
+            res.redirect("/login");
+        });
+    });
+});
+
+router.post("/login", passport.authenticate("local"), (req, res) => {
+    res.redirect("#/dashboard");
+});
+
+router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/login");
+});
 
 
-router.post('/login', passport.authenticate('local',{
-    successRedirect: '/',
-    failureRedirect: '/'
-  }));
 
-module.exports = passport;
+module.exports = router;
