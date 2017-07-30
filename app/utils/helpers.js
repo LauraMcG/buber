@@ -11,7 +11,8 @@ var helpers = {
     	password: password,
     	role: role
     };
-    return axios.post("/auth/users", newUser)
+    console.log("going to helpers");
+    return axios.post("/auth/register", newUser)
       .then(function(response) {
         console.log(response.data._id);
         return response.data._id;

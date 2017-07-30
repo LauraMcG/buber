@@ -3,6 +3,7 @@ var helpers = require("../utils/helpers");
 var ParentProfile = require("../components/register/ParentProfile");
 var SitterProfile = require("../components/register/SitterProfile");
 var Link = require("react-router").Link;
+var Auth = require("../../server/passport/auth-token");
 
 
 var Register = React.createClass({
@@ -63,7 +64,7 @@ var Register = React.createClass({
 					    <div className="col-md-12">
 					  
 							      <h3 className= "registerHeader">Register</h3>
-							      <form method="POST" action="/users">
+							      <form method="POST" action="/register">
 							      	<div className="form-group">
 							          <label className="control-label col-sm-2" htmlFor="firstName">First Name</label>
 							          <input className="form-control" name="firstName" id="firstName" value={this.state.firstName} onChange={this.handleChange} required/>

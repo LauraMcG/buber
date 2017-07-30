@@ -8,7 +8,8 @@ var Parent = require("./server/models/Parent");
 var Babysitter = require("./server/models/Babysitter");
 var Appointment = require("./server/models/Appointment");
 
-var passport = require('./app/config/passport.js');
+var passport = require('passport');
+// const config = require("./app/config");
 
 //Express and port set-up
 var app = express();
@@ -29,9 +30,24 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 // serve static files from public directory
 app.use(express.static(process.cwd() + "/public"));
 
-//Passport middleware
-// var authCheckMiddleware = require('./server/passport/auth-passport.js');
-// app.use('/api', authCheckMiddleware);
+//Passport Dependencies
+app.use(passport.initialize());
+const localSignupStrategy = require("./server/passport/registry-strategy");
+const localLoginStrategy = require("./server/passport/login-strategy");
+passport.use("registry-strategy", localSignupStrategy);
+passport.use("login-strategy", localLoginStrategy);
+
+//Passport Middleware
+var authCheckMiddleware = require('./server/passport/auth-passport.js');
+app.use('/api', authCheckMiddleware);
+
+// adding Passport Routes
+var passportRoutes = require("./server/routes/passport-routes-authentication");
+app.use("/auth", passportRoutes);
+
+// adding userRoute
+var userRoutes = require("./server/routes/userRoutes");
+app.use("/api", userRoutes);
 
 // adding userRoute
 var userRoutes = require("./server/routes/userRoutes");
@@ -48,14 +64,6 @@ app.use("/api", babysitterRoutes);
 // adding sitterRoute
 var appointmentRoutes = require("./server/routes/appointmentRoutes");
 app.use("/api", appointmentRoutes);
-
-// adding userRoute
-var userRoutes = require("./server/routes/userRoutes");
-app.use("/api", userRoutes);
-
-// adding userRoute
-var passportRoutes = require("./server/routes/passport-routes-authentication");
-app.use("/auth", passportRoutes);
 
 //fallback route
 app.get('*', function(req,res){

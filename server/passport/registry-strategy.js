@@ -1,6 +1,7 @@
+var jwt = require('jsonwebtoken');
 var User = require('../models/User.js');
 var PassportLocalStrategy = require('passport-local').Strategy;
-
+var config = require('./config.json');
 
 /**
  * Return the Passport Local Strategy object.

@@ -2,7 +2,7 @@ var passport = require("passport");
 var express = require("express");
 var router = express.Router();
 
-var User = require("../models/User")
+var User = require("../models/User");
 
 // Route to get all Users
 router.get("/users", function(req, res) {

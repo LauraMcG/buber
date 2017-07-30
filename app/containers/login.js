@@ -2,6 +2,7 @@ var React = require("react");
 var Link = require("react-router").Link;
 var Auth = require("../../server/passport/auth-token");
 var helpers = require("../utils/helpers");
+var axios = require('axios');
 
 var Login = React.createClass({
 	getInitialState: function(){
@@ -11,25 +12,50 @@ var Login = React.createClass({
 			submitted: 'false'
 		};
 
+		this.onSubmit = this.onSubmit.bind(this);
+
 	},
+
 	handleChange: function(event){
 	var newState = {};
     newState[event.target.name] = event.target.value;
     this.setState(newState);
 	},
+
 	handleOptionChange: function (changeEvent) {
 	  this.setState({
 	    selectedRole: changeEvent.target.value
 	  });
 	},
+
+	componentDidMount: function () {
+	  	if (localStorage.getItem("successMessage")) {
+	  	  this.setState({ justReg: true });
+	  	}
+  	},
+
+	  loadSuccessMessage: function() {
+	  	const getMessage = localStorage.getItem("successMessage");
+	  	return getMessage;
+	  },
 	onSubmit: function (e){
 		e.preventDefault();
-		helpers.checkUser(this.state.email, this.state.password).then(function(response){
-		//console.log(JSON.stringify(response));
+		axios.post("/api/login", {
+		  "email": this.state.email,
+		  "password": this.state.password
+		}).then((response) => {
+		  //console.log(JSON.stringify(response));
 		  Auth.authenticateUser(response.data.token);
 	      localStorage.removeItem("successMessage");
 		  this.setState({ redirect: true });
-		}.bind(this));
+		})
+	  },
+		// helpers.checkUser(this.state.email, this.state.password).then(function(response){
+		// //console.log(JSON.stringify(response));
+		//   Auth.authenticateUser(response.data.token);
+	 //      localStorage.removeItem("successMessage");
+		//   this.setState({ redirect: true });
+		// }.bind(this));
 
 	// 		event.preventDefault();
 	// helpers.checkUSer("/auth/login", {
@@ -41,7 +67,6 @@ var Login = React.createClass({
  //      localStorage.removeItem("successMessage");
 	//   this.setState({ redirect: true });
 	// })
-	},
 	render: function(){
 		return (
 		<div>
@@ -54,7 +79,7 @@ var Login = React.createClass({
 			    </div>
 
 			</div> 
-
+			  { this.state.justReg ? this.loadSuccessMessage() : <div></div>}
 		<div className="row registerRow">
 		 <div className="col-md-12">
 		 <h3 className= "registerHeader">Login</h3>
