@@ -18,6 +18,18 @@ class AppointmentForm extends Component {
 
   }
 
+  componentDidMount() {
+    $('#apptDateTime').datepicker(
+    // {
+    //   changeMonth: true,
+    //   changeYear: true,
+    //   showButtonPanel: true,
+    //   yearRange: "-116:+34",
+    //   dateFormat: 'dd/mm/yy'
+    // }
+    );
+  } 
+
   onSubmit(event) {
   		event.preventDefault();
   		this.state.appointmentBooked = true;
@@ -47,7 +59,7 @@ class AppointmentForm extends Component {
 			<form>
 				<div className="form-group">
 					<label className="control-label" htmlFor="firstName">Appointment Date</label>
-					<input className="form-control" name="apptDateTime" id="apptDateTime" value={this.state.apptDateTime}
+					<input type="text" className="form-control datepicker" name="apptDateTime" id="apptDateTime" value={this.state.apptDateTime}
 						onChange={this.handleChange}
 					/>
 				</div>

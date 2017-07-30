@@ -31,6 +31,8 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "react": "^15.1.0",
+    "react-addons-shallow-compare": "^15.6.0",
+    "react-dates": "^12.3.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1",
     "validator": "^7.2.0"
@@ -45,6 +47,5 @@
   "engines": {
     "node": "6.11.1"
   },
-
   "homepage": "https://github.com/mstorino/buber#readme"
 }
