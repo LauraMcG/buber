@@ -60,11 +60,11 @@ var ParentProfile = React.createClass({
 					        </div>
 					        <div className="form-group">
 					          <label className="control-label" htmlFor="phoneNumber">Phone Number</label>
-					          <input name="phoneNumber" className="form-control" id="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}required/>
+					          <input type="tel" name="phoneNumber" className="form-control" id="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="numChildren" className="control-label col-sm-2">Number of Children</label>
-					          <input type="numChildren" className="form-control" name="numChildren" id="numChildren"  value={this.state.numChildren} onChange={this.handleChange}required/>
+					          <input type="number" className="form-control" name="numChildren" id="numChildren"  value={this.state.numChildren} onChange={this.handleChange}required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="emergencyFirstName" className="control-label col-sm-2">Emergency First Name</label>
@@ -76,7 +76,7 @@ var ParentProfile = React.createClass({
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="emergencyPhoneNumber" className="control-label col-sm-2">Emergency Phone Number</label>
-					          <input type="emergencyPhoneNumber" className="form-control" name="emergencyPhoneNumber" id="emergencyPhoneNumber"  value={this.state.emergencyPhoneNumber} onChange={this.handleChange} required/>
+					          <input type="tel" className="form-control" name="emergencyPhoneNumber" id="emergencyPhoneNumber"  value={this.state.emergencyPhoneNumber} onChange={this.handleChange} required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="doctorLastName" className="control-label col-sm-2">Doctor Last Name</label>
@@ -84,7 +84,7 @@ var ParentProfile = React.createClass({
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="doctorPhoneNumber" className="control-label col-sm-2">Doctor Phone Number</label>
-					          <input type="doctorPhoneNumber" className="form-control" name="doctorPhoneNumber" id="doctorPhoneNumber"  value={this.state.doctorPhoneNumber} onChange={this.handleChange}required/>
+					          <input type="tel" className="form-control" name="doctorPhoneNumber" id="doctorPhoneNumber"  value={this.state.doctorPhoneNumber} onChange={this.handleChange}required/>
 					        </div>
 					        <div className="form-group">
 					          <label htmlFor="wifiPassword" className="control-label col-sm-2">Wifi Password</label>
