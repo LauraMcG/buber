@@ -83,25 +83,25 @@ class ParentView extends Component {
 
 				<div className="row mainRow pink">
 
-					<div className="col-md-12 heroParentContent text-center">
+					<div className="col-xs-12 heroParentContent">
 
-					    <h1>{this.props.firstName}, booking a babysitter is as easy as one, two, three. </h1>
+					    <h1 className="text-center">{this.props.firstName}, booking a babysitter is as easy as one, two, three. </h1>
 
-					    <div className="col-md-4">
-					      		<h3 className="parentHeroListItem">1. Shop Local</h3> 
+					    <div className="col-xs-4 parentHeroListItem">
+					      		<h3>1. Shop Local</h3> 
 					      		<br />
 					      		<p>Here is a list of babysitters who are right outside your front door. Click a profile to see more details.
 					      		</p>
 					    </div>
 					      	
-					    <div className="col-md-4">
-					      		<h3 className="parentHeroListItem">2. Look & Book</h3> 
+					    <div className="col-xs-4 parentHeroListItem">
+					      		<h3>2. Look & Book</h3> 
 					      		<br />
 					      		<p>When you book a sitter & enter your appointment details the sitter will be notified. You'll receive confirmation when the sitter accepts your request.
 					      		</p>
 					    </div>
 					      	
-					    <div className="col-md-4">
+					    <div className="col-xs-4 parentHeroListItem">
 
 					      		<h3>3. Have Fun</h3>
 					      		<br/>

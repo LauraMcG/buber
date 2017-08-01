@@ -30,7 +30,7 @@ const AppointmentList = (props) => {
 	return (
 		<div>
 			<div className="appointmentList row">
-				<div className="col-md-12"/>
+				<div className="col-xs-12"/>
 
 					<h1>Pending Appointments</h1>
 					<ul className="appointmentListItems">

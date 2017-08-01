@@ -53,7 +53,7 @@ class AppointmentListItem extends Component {
 		} 
 		return (
 			<li key={this.props.appointment._id}
-					className="col-sm-2 appointmentListItem"  >
+					className="col-xs-2 appointmentListItem"  >
 
 					<div className = "notAccepted"><h2><strong>Pending...</strong></h2></div>
 					<p>Day: {this.props.appointment.apptDateTime}</p>

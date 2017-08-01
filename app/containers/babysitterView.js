@@ -50,32 +50,34 @@ class BabysitterView extends Component {
             <div> 
 
     <div className="row pink">
-        <div className="col-md-12 babysitterHeroContent">
-          <div className="col-md-4">  
-            <h2>Buber <br/> redefines <br/> babysitting</h2>
+        <div className="col-xs-12 babysitterHeroContent">
+          <div className="row">  
+            <div className="col-xs-12">
+               <h2>Buber redefines babysitting</h2>
+            </div>
           </div>
 
-           <div className="col-md-8 sideBorder">
+           <div className="sideBorder">
 
             <div className="row">
-              <div className="col-sm-6">
+              <div className="col-xs-6">
                 <h3>Reach Your Neighbors</h3>
                 <p>Buber puts you in touch with families in your community. You reach all the kids not just the ones you know.</p>
               </div>
 
-              <div className="col-sm-6">
+              <div className="col-xs-6">
                 <h3>Got a Minute? Babysit</h3>
                 <p>Buber puts you in touch with families in your community. You reach all the kids not just the ones you know.</p>
               </div>
             </div>
 
             <div className="row">
-              <div className="col-sm-6">
+              <div className="col-xs-6">
                 <h3>Upcharge for High Demand</h3>
                 <p>Certain dates book up fast. Get compensated accordingly.</p>
               </div>
 
-              <div className="col-sm-6">
+              <div className="col-xs-6">
                 <h3>Calendar</h3>
                 <p>Our appointment noticeboard lists all of your appointments. You'll never forget a sitting appointment again.</p>
               </div>
@@ -85,7 +87,6 @@ class BabysitterView extends Component {
       
     </div>
   </div>
-
 
 
 

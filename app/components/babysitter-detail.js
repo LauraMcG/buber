@@ -7,10 +7,14 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 // this is to check on the status for rendering
 	if (!babysitter) {
 		return (
-			<div className="row sitterDetail pink">
-				<div className="col-md-12 text-center">
-					<h3>Let's find your perfect babysitter.</h3>
-				</div>
+			<div className="row sitterDetail">
+							
+					<div className="findImg col-md-3">
+		      			<img src= 'img/findSitter.jpg'/>
+		    		</div>
+					<h3 className="col-md-9">Let's find your perfect babysitter.
+					</h3>
+						
 			</div>
 		);
 	}
@@ -28,13 +32,13 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 		{appointmentForm}
 
 		<div className="row sitterDetail">
-		    <div className="col-md-4 imageBox">
+		    <div className="col-xs-4 imageBox">
 		      <img src={babysitter.photo} alt={babysitter._userID.firstName}/>
 		    </div>
 
-		    <div className="col-md-8 col-xs-8">
+		    <div className="col-xs-8">
 		      <h1>Meet your new favorite sitter:</h1>
-		      <ul className="sitterDetail">
+		      <ul className="sitterDetailList">
 		        <li><h2>Name:</h2><p>{babysitter._userID.firstName} {babysitter._userID.lastName}</p></li>
 		        
 		        <li><h2>Bio:</h2><p>{babysitter.bio}</p></li>

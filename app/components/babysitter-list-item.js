@@ -10,7 +10,7 @@ const BabysitterListItem = ({babysitter, onBabysitterSelect}) => {
 			      <li 
 			      	key={babysitter._id}
 			      	onClick={() => onBabysitterSelect(babysitter)}
-			      	className="col-sm-3 col-md-2 text-center sitterListItem favSitter"
+			      	className="col-xs-4 col-md-2 text-center sitterListItem favSitter"
 
 			      >
 

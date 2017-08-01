@@ -14,7 +14,7 @@ class AvailableSitterList extends Component {
 					<li 
 						key={babysitter._id} 
 						onClick={() => onBabysitterSelect(babysitter)}
-			      		className="col-sm-3 col-md-2 text-center sitterListItem favSitter"
+			      		className="col-xs-4 col-md-2 text-center sitterListItem favSitter"
 			      		>
 						
 						<div className="listContainer">
@@ -47,7 +47,7 @@ class AvailableSitterList extends Component {
 			<section className="projectSection container-fluid">
 				<div className="row sitterRow availableRow">
 					<h2>These Babysitters Are Available RIGHT NOW!</h2>
-					<ul className="list-group col-md-12">
+					<ul className="list-group col-xs-12">
 						{this.renderList()}
 					</ul>
 				</div>

@@ -28,7 +28,8 @@ body {
 }
 
 h1 {
-	padding-left: 20px;
+	/*padding-left: 20px;*/
+	font-size:1.5em;
 }
 h2 {
 	font-family: 'Open Sans';
@@ -113,16 +114,17 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 
 /*hero containers*/
 .mainRow {
-	height:400px;
+	/*height:400px;*/
+	padding-bottom:10%;
 
 }
 
 .heroContent {
-	padding-top: 90px;
+	padding-top: 10%;
 }
 
 .heroParentContent {
-	padding-top: 40px;
+	padding-top: 5%;
 }
 
 .heroParentContent h1 {
@@ -135,9 +137,9 @@ nav a, .sitterRow h2, .sitterDetail h2, .appointmentListItems h2{
 	padding-left: 10px;
 }
 
-.parentHeroListItem {
+/*.parentHeroListItem {
 	border-right: 1px solid #dce6ff;
-}
+}*/
 
 
 
@@ -191,10 +193,12 @@ h2.sitterName {
 
 }
 .sitterListItem {
-	height: 300px;
-	min-height: 360px;	
+/*	height: 300px;*/
+	min-height: 45%;	
 	padding-top:16px;
-	margin-left: 10px;
+	margin-left: 3%;
+	width:30%;
+	margin-bottom: 3%;
 }
 
 .sitterListItem .btn {
@@ -206,13 +210,11 @@ h2.sitterName {
 
 .sitterDetail {
    
-    height:100px;
+    /*height:100px;*/
     margin-bottom: 50px;
 }
 
-.sitterDetail ul {
-    height: 260px;
-}
+
 
 
 .sitterDetail h2, .sitterDetail p {
@@ -230,10 +232,11 @@ h2.sitterName {
 }
 
 
-.sitterDetail ul{
+.sitterDetailList{
 	list-style: none;
 	padding-top: 20px;
-	padding-bottom:20px;
+	/*padding-bottom:20px;*/
+	height:170px;
 }
 .sitterRow ul {
 	list-style: none;
@@ -340,21 +343,80 @@ h3.parentRegisterHero, h3.sitterRegisterHero{
 }
 
 .babysitterHeroContent h2{
-	font-size: 52px;
-	letter-spacing: 2px;
-	padding-left:5px;
+	/*font-size: 52px;
+	letter-spacing: 2px;*/
+	/*padding-left:5px;*/
 	padding-top:10px;
+	font-size: 26px;
 }
 
-.sideBorder{
-	border-left: 1px dotted black;
-	padding-left: 40px;
-	float:right;
-}
+
 
 .availableRow {
 	margin-top:0px;
 	margin-bottom:0px;
 	margin-left:3px;
 }
+
+button.navbar-toggle.collapsed {
+			border:none;
+		}
+
+.findImg {
+	display:inline;
+}
+.findImg img{
+	width: 40%;
+}
+/* Extra small devices (phones, less than 768px) */
+@media only screen and (min-width : 480px) {
+	h1 {
+		font-size:1.5em;
+		}
+	
+	.heroParentContent h1 {
+		font-size: 2em;
+		padding-bottom: 5%;
+	}
+	.babysitterHeroContent h2 {
+			font-size: 32px;
+			letter-spacing: 1px;
+			/*line-height:1px;*/
+		}
+
+	
+	.sideBorder h3, 	.parentHeroListItem h3 {
+			font-size: 20px;
+		}
+
+	.parentHeroListItem {
+		padding-right:5px;
+		padding-left:5px;
+	}
+
+}
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width : 768px) {
+		h1 {
+		font-size:2em;
+		}
+	
+		
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width : 992px) {
+	h1 {
+			font-size:2.5em;
+		}
+	
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width : 1200px) {
+		
+	.babysitterHeroContent h2{
+		font-size: 52px;
+		letter-spacing: 2px;
+	}
+
+	.babysitterHeroContent h3 {
+		font-size: 24px;
+	}
 
