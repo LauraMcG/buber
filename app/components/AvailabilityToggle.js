@@ -29,18 +29,11 @@ class AvailabilityToggle extends Component {
   render() {   
 
     let button;
+    let avaiabilityStatus;
 
     if (this.state.isAvailable) {
 
-      button = (
-      <div>  
-        <button onClick={this.handleClick}>
-          Set as available!
-        </button> 
-      </div>  
-      )
-
-    } else {
+      avaiabilityStatus = "available";
 
       button = (
       <div>  
@@ -49,17 +42,29 @@ class AvailabilityToggle extends Component {
         </button> 
       </div>  
       )
+
+    } else {
+
+      avaiabilityStatus = "not available";
+
+      button = (
+      <div>  
+        <button onClick={this.handleClick}>
+          Set as available!
+        </button> 
+      </div>  
+      )
     }
 
     return (
       <div>
-        <h2>Are you available?</h2>
+        <h3>You are listed as {avaiabilityStatus}.</h3>
         { button }
       </div>
     );
 
   }
-  
+
 }
 
 
