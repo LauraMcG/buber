@@ -199,6 +199,7 @@ h2.sitterName {
 	margin-left: 3%;
 	width:30%;
 	margin-bottom: 3%;
+	padding-bottom: 20px;
 }
 
 .sitterListItem .btn {
@@ -212,6 +213,9 @@ h2.sitterName {
    
     /*height:100px;*/
     margin-bottom: 50px;
+    /*width: 50%;*/
+    margin: 0 auto;
+    padding-top:20px;
 }
 
 
@@ -370,8 +374,8 @@ button.navbar-toggle.collapsed {
 		}
 
 .findImg {
-	width:80%;
-	margin: 0 auto;
+
+	margin: 20px auto;
 	
 }
 /*.findImg img{
