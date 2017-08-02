@@ -227,7 +227,14 @@ h2.sitterName {
 	letter-spacing: 2px;
 }
 .sitterDetail h3  {
-	padding-top:15px;
+	/*padding-top:15px;*/
+	display:inline;
+	position:absolute;
+	/*top: 538px;*/
+	left: 50px;
+	font-size:52px;
+	color:white;
+
 	
 }
 
@@ -363,11 +370,13 @@ button.navbar-toggle.collapsed {
 		}
 
 .findImg {
-	display:inline;
+	width:80%;
+	margin: 0 auto;
+	
 }
-.findImg img{
+/*.findImg img{
 	width: 40%;
-}
+}*/
 /* Extra small devices (phones, less than 768px) */
 @media only screen and (min-width : 480px) {
 	h1 {

@@ -9,11 +9,12 @@ const BabysitterDetail = ({parentID, babysitter, appointment, showAppointmentFor
 		return (
 			<div className="row sitterDetail">
 							
-					<div className="findImg col-md-3">
+					<div className="findImg col-md-12">
 		      			<img src= 'img/findSitter.jpg'/>
-		    		</div>
-					<h3 className="col-md-9">Let's find your perfect babysitter.
+		    		
+					<h3 className="sitterDetailH3">Let's find your perfect babysitter.
 					</h3>
+					</div>
 						
 			</div>
 		);

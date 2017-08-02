@@ -117,10 +117,7 @@ class ParentView extends Component {
 
 				</div> 
 				
-				<AppointmentList 
-					appointments= {this.state.appointments}
-					role="parent"
-				/>
+				
 
 				<BabysitterDetail
 					parentID = {this.props.userID}
@@ -132,12 +129,19 @@ class ParentView extends Component {
 					handleAppointmentUpdate={this.handleAppointmentUpdate}
 				/>
 
-				<AvailableSitterList 
+				<AppointmentList 
+					appointments= {this.state.appointments}
+					role="parent"
+				/>
+
+				
+
+				<BabysitterList 
 					onBabysitterSelect = {selectedBabysitter => this.setState({selectedBabysitter}) }
 					babysitters = {this.state.babysitters} 
 				/>
 
-				<BabysitterList 
+				<AvailableSitterList 
 					onBabysitterSelect = {selectedBabysitter => this.setState({selectedBabysitter}) }
 					babysitters = {this.state.babysitters} 
 				/>
